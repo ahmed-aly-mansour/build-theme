@@ -93,7 +93,7 @@
     transform: scaleY(-1);
   }
   .header-logo {
-    width: auto;
+    {% comment %} width: auto; {% endcomment %}
     height: {{ settings.logo_height | append: 'px' }};
     transition: height 300ms ease;
   }
@@ -328,7 +328,8 @@
     {% if request.page_type == 'index' %}<h1 class="header-logo-container" style="margin: 0">{% endif %}
     <a href="{{ routes.root_url }}" class="header-shop_link" style="display: flex">
       {% if settings.logo != blank %}
-        {{ settings.logo | image_url: width: 900 | image_tag: class: 'header-logo' }}
+        {% comment %} {{ 'icon-logo.svg' | inline_asset_content }} {% endcomment %}
+        {{ settings.logo | image_url: width: 250 | image_tag: class: 'header-logo' }}
       {% else %}
         <span class="header-shop_name">{{ shop.name }}</span>
       {% endif %}
