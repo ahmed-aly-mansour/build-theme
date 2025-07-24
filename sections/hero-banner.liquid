@@ -7,6 +7,7 @@
   assign section_id = 'hero-banner-' | append: section.id
   assign background_type = section.settings.background_type
   assign image_background = section.settings.image_background
+  assign image_background_mobile = section.settings.image_background_mobile
   assign video_background_url = section.settings.video_background_url
   assign video_background_hosted = section.settings.video_background_hosted
 
@@ -75,7 +76,12 @@
         {{
           image_background
           | image_url: width: 2000
-          | image_tag: loading: 'lazy', widths: '400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000', class: ''
+          | image_tag: id: "image_background_pc", loading: 'lazy', widths: '400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000', class: ''
+        }}
+        {{
+          image_background_mobile
+          | image_url: width: 2000
+          | image_tag: id: "image_background_mobile", loading: 'lazy', widths: '400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000', class: ''
         }}
       {% else %}
         {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -118,6 +124,29 @@
   {% endif %}
 </div>
 
+<style>
+  #image_background_pc {
+    display: block;
+  }
+
+  #image_background_mobile {
+    display: none;
+  }
+
+  {% if image_background_mobile %}
+    @media (max-width: 768px) {
+      #image_background_pc {
+        display: none;
+      }
+  
+      #image_background_mobile {
+        display: block;
+      }
+    }
+  {% endif %}
+
+</style>
+
 {% schema %}
 {
   "name": "Hero Banner",
@@ -142,6 +171,11 @@
       "type": "image_picker",
       "id": "image_background",
       "label": "Image Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_background_mobile",
+      "label": "Mobile Image Background"
     },
     {
       "type": "video",

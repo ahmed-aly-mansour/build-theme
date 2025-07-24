@@ -96,11 +96,13 @@
 }
 
 .hero-banner-section .hero-banner__heading {
+  font-family: BaseMonoWideWeb,Courier,Courier New,sans-serif;
   font-size: 4.4rem;
   margin-bottom: 5px;
   font-weight: bold;
   line-height: 1.2;
   color: var(--hero-text-color, #FFFFFF); /* Explicitly use variable */
+  background-color: #fff;
 }
 
 .hero-banner-section .hero-banner__subheading {
@@ -121,6 +123,8 @@
   width: 100%;
   text-transform: uppercase;
   font-size: 2rem;
+  text-align: center;
+  border-radius: 5px;
 }
 
 .hero-banner-section .hero-banner__button:hover {
@@ -167,7 +171,7 @@
     transform: none;
     margin: 0;
     padding: 0;
-    max-width: 90%;
+    max-width: 50%;
     width: 100%;
   }
 
