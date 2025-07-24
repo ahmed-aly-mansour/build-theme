@@ -51,7 +51,7 @@
       </div>
 
       <div id="featured-products-{{ section.id }}" class="featured-products__swiper swiper">
-        <div class="featured-products__swiper-arrows">
+        {% comment %} <div class="featured-products__swiper-arrows">
           <div class="swiper-button-prev featured-products__swiper-prev">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
               <path d="M14.5 6.00005L1.5 6.00005M1.5 6.00005L6.375 0.800049M1.5 6.00005L6.375 11.2" stroke="#9D9D9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -62,7 +62,7 @@
               <path d="M1.5 6.00005L14.5 6.00005M14.5 6.00005L9.625 0.800049M14.5 6.00005L9.625 11.2" stroke="#9D9D9D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-        </div>
+        </div> {% endcomment %}
         <div class="swiper-wrapper">
           {%- for block in section.blocks -%}
             {%- assign product = block.settings.product -%}

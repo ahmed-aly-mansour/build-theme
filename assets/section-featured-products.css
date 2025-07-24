@@ -3,6 +3,7 @@
 .featured-products-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  width: 100%;
 }
 
 .featured-products__header {
@@ -18,7 +19,7 @@
   position: relative;
   padding-top: 8rem;
   padding-bottom: 3rem;
-  width: 95%;
+  width: 100vh;
 }
 .featured-products__titles {
   flex-grow: 1; /* Allow titles to take available space */
