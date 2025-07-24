@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "name": "Header group",
   "type": "header",
   "sections": {
@@ -17,25 +17,35 @@
         "announcement_DVFxDX": {
           "type": "announcement",
           "settings": {
-            "text": "Text Here",
+            "text": "Free Shipping on All Orders Over $85",
             "link_text": "",
             "link_url": "",
-            "emoji": "🚨"
+            "emoji": ""
           }
         },
         "announcement_3wP6h3": {
           "type": "announcement",
           "settings": {
-            "text": "Text Here 2",
+            "text": "Meet Your New Non-Negotiable — Everyday Sunscreen Is Here",
             "link_text": "",
             "link_url": "",
-            "emoji": "🚨"
+            "emoji": ""
+          }
+        },
+        "announcement_NgDHBK": {
+          "type": "announcement",
+          "settings": {
+            "text": "Are Back — Meet Four New Limited-Edition Compacts",
+            "link_text": "Miracle Balm Palettes",
+            "link_url": "shopify://products/amazing-watch",
+            "emoji": ""
           }
         }
       },
       "block_order": [
         "announcement_DVFxDX",
-        "announcement_3wP6h3"
+        "announcement_3wP6h3",
+        "announcement_NgDHBK"
       ],
       "settings": {
         "show_announcement": true,
