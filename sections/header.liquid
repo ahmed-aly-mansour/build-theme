@@ -148,7 +148,15 @@
 
   #header-actions_search {
     cursor: pointer;
+    display: inline-flex;
   }
+  @media screen and (max-width: 1024px){
+    #header-actions_search {
+      display: none;
+    }
+  }
+
+
   #header-search {
     position: absolute;
     inset: 0;

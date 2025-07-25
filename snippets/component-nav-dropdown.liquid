@@ -37,11 +37,80 @@
     }
   </style>
 {% endunless %}
+
+<style>
+  .menu-drawer-search{
+    display: flex;
+    width: 100%;
+    align-items: end;
+    justify-content: start;
+    padding: 15px;
+  }
+  
+  .menu-drawer-search form{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .menu-drawer-search-input{
+    flex: 1;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: medium;
+    border-bottom: 1px rgba(72, 74, 72, 1) solid;
+    padding: 0px 10px;
+    color: rgba(72, 74, 72, 1);
+    box-sizing: border-box;
+  }
+
+  .menu-drawer-search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .search-list-item {
+    display: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .search-list-item {
+      display: flex;
+    }
+  }
+</style>
+
 <ul
   {% if nav_style == 'drawer' %}
     class="menu-drawer_navigation"
   {% endif %}
 >
+  <li class="search-list-item">
+    <div class="menu-drawer-search">
+      <form action="{{ routes.search_url }}" method="get" role="search">
+        {{ 'icon-search.svg' | inline_asset_content }}
+        <input type="text"
+          placeholder="Search for Miracle Balm, What The Foundation"
+          name="q"
+          value="{{ search.terms | escape }}"
+          class="menu-drawer-search-input"
+        />
+        
+        <button type="submit" class="menu-drawer-search-button">
+          {{ 'icon-chevron-right.svg' | inline_asset_content }}
+        </button>
+        
+      </form>
+
+    </div>
+  </li>
   {% for link in section.settings.menu.links %}
     <li x-data="{ menuOpen: false, activeSubMenu: null }" @mouseleave="menuOpen = false; activeSubMenu = null">
       {% if link.links != blank %}
@@ -64,7 +133,7 @@
           x-cloak
         >
           {%- for childlink in link.links -%}
-            {{     }}
+
             <li>
               {% if childlink.links == blank %}
                 <a
