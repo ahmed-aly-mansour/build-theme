@@ -17,31 +17,25 @@
       </div>
       <div class="cart-empty">
         <div class="cart__empty-content">
-          <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
-          <a href="{{ routes.all_products_collection_url }}" class="button">
-            {{ 'general.continue_shopping' | t }}
-          </a>
-
-          {%- if shop.customer_accounts_enabled and customer == null -%}
-            <p class="cart__login-title h3">{{ 'sections.cart.login.title' | t }}</p>
-            <p class="cart__login-paragraph">
-              {{ 'sections.cart.login.paragraph_html' | t: link: routes.account_login_url }}
-            </p>
-          {%- endif -%}
-        </div>
-
-        {%- if settings.cart_drawer_collection != blank -%}
-          <div class="cart-collection">
-            {% assign card_collection = settings.cart_drawer_collection %}
-            <a href="">
-              {{ card_collection.featured_image | image_url: width: 1500 | image_tag }}
-              <div class="cart-collection__title">
-                {{ card_collection.title }}
-                {% comment %} {{- 'icon-arrow.svg' | inline_asset_content -}} {% endcomment %}
-              </div>
+          <p class="cart__empty-text">Your bag is empty (for now).</p>
+          <div class="cart-empty-btns">
+            <a href="{{ collections['shop-all'].url }}" class="btn-style-2">
+              Shop all Products
+            </a>
+            <a href="{{ collections['kits'].url }}" class="btn-style-2">
+              Shop Kits
+            </a>
+            <a href="{{ pages['quiz-landig'].url }}" class="btn-style-2">
+              Find your Shade
             </a>
           </div>
-        {%- endif -%}
+          
+            <a href="{{ collections['shop-all'].url }}" class="btn-style-1">
+              start shopping
+            </a>
+        </div>
+
+        
       </div>
 
     {%- else -%}
