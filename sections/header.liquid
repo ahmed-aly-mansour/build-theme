@@ -293,6 +293,9 @@
     .header-logo{
       padding-inline: 20px;
     }
+    .cart-item-count{
+      display:none;
+    }
   }
   @media (min-width: 1024px) {
     .header-menu-position-center {
@@ -303,6 +306,10 @@
     {
       min-width: 160px;
     }
+    .cart-item-count{
+      display:inline;
+    }
+    
   }
 
   #main-header nav ul,
@@ -401,7 +408,7 @@
           href="{{ routes.cart_url }}"
         {%- endif -%}
       >
-        {{ 'icon-cart.svg' | inline_asset_content }} Bag{% if cart.item_count > 0 %}: {{cart.item_count}}{% endif %}
+        {{ 'icon-cart.svg' | inline_asset_content }} Bag{% if cart.item_count > 0 %}<span class="cart-item-count">: {{cart.item_count}}</span>{% endif %}
       </a>
     </div>
 
