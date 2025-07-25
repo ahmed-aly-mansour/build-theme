@@ -3,27 +3,36 @@
     #main-header .nav-dropdown,
     #main-header .nav-dropdown_child {
       position: absolute;
-      top: 100%;
+      top: 65%;
       gap: 0;
       align-items: stretch;
       flex-direction: column;
       margin-top: 1px;
       overflow: hidden;
+      box-sizing: border-box;
     }
     #main-header .nav-dropdown {
+      /*
       box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
+      */
+      border-top: 1px rgba(72, 74, 72, 0.1) solid;
     }
+    #main-header .menu-toggle:hover{
+      border-bottom: 1px rgba(72, 74, 72, 0.5) solid;
+      transition: all 0.3s ease-in-out;
+    }
+
     #main-header .nav-dropdown_child {
       position: static;
     }
     #main-header .nav-dropdown a,
     #main-header .nav-dropdown .menu-toggle {
       display: flex;
-      min-width: 20ch;
+      min-width: 27ch;
       width: 100%;
       font-size: 15px;
       line-height: 1.5;
-      padding: 12px 18px;
+      padding: 30px 18px;
       border-bottom: 1px solid rgb(var(--color-foreground), 0.2);
     }
   </style>
@@ -34,15 +43,18 @@
   {% endif %}
 >
   {% for link in section.settings.menu.links %}
-    <li x-data="{ menuOpen: false, activeSubMenu: null }" @click.outside="menuOpen = false; activeSubMenu = null">
+    <li x-data="{ menuOpen: false, activeSubMenu: null }" @mouseleave="menuOpen = false; activeSubMenu = null">
       {% if link.links != blank %}
         <button
-          @click="menuOpen = !menuOpen"
+          @mouseenter="menuOpen = !menuOpen"
           :class="{ 'menu-open': menuOpen }"
           class="menu-toggle"
         >
+          
+          <a href="{{ link.url }}">
           {{- link.title | escape -}}
-          {{- 'icon-caret.svg' | inline_asset_content -}}
+        </a>
+          {% comment %} {{- 'icon-caret.svg' | inline_asset_content -}} {% endcomment %}
         </button>
         <ul
           x-show="menuOpen"
@@ -52,6 +64,7 @@
           x-cloak
         >
           {%- for childlink in link.links -%}
+            {{     }}
             <li>
               {% if childlink.links == blank %}
                 <a
