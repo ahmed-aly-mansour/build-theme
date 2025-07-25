@@ -450,7 +450,7 @@
   {%- endif -%}
 
   {%- if settings.cart_type == 'drawer' -%}
-    {%- render 'component-cart-drawer' -%}
+    {%- render 'component-cart-drawer', settings: section.settings -%}
   {%- endif -%}
 </div>
 
@@ -708,7 +708,14 @@
       "id": "cart_count_color",
       "label": "Cart count color",
       "default": "#2E2E2E"
-    }
+    },
+    {
+      "type": "number",
+      "id": "free_shipping_threshold",
+      "label": "Cart Free Shipping Threshold",
+    },
+    
+  
   ],
   "blocks": [
     {
