@@ -45,6 +45,7 @@
           {{- 'icon-close.svg' | inline_asset_content -}}
         </div>
       </div>
+      
       {% if settings.free_shipping_threshold > 0 %}
         {% assign shipping_threshold = settings.free_shipping_threshold %}
         {% assign cart_subtotal_dollars = cart.items_subtotal_price | divided_by: 100.0 %}
@@ -85,16 +86,19 @@
 
             <div class="cart-item__details">
               <div class="cart-item__heading">
-                <a href="{{ line_item.url }}">
-                  {{ line_item.title | escape }}
-                </a>
 
-                <small class="cart-item__price">
-                  {% if line_item.original_price > line_item.final_price %}
-                    <s>{{ line_item.original_price | money }}</s>
-                  {% endif %}
-                  <span>{{ line_item.final_price | money }}</span>
-                </small>
+                <div class="cart-item-header-with-price">
+                  <a href="{{ line_item.url }}">
+                    {{ line_item.title | escape }}
+                  </a>
+  
+                  <small class="cart-item__price">
+                    {% if line_item.original_price > line_item.final_price %}
+                      <s>{{ line_item.original_price | money }}</s>
+                    {% endif %}
+                    <span>{{ line_item.final_price | money }}</span>
+                  </small>
+                </div>
 
                 {%- if line_item.product.has_only_default_variant == false
                   or line_item.properties.size != 0
@@ -232,10 +236,10 @@
               </ul>
             {% endif %}
 
-            <div class="cart-total">
-              <span class="cart-total__label">Estimated total</span> <span class="cart-total__price">{{ cart.total_price | money }}</span>
+             <div class="cart-total">
+              <span class="cart-total__label">SUBTOTAL</span> <span class="cart-total__price">{{ cart.total_price | money }}</span>
             </div>
-            <small class="cart-total__small">Taxes, discounts and shipping calculated at checkout.</small>
+            {% comment %}<small class="cart-total__small">Taxes, discounts and shipping calculated at checkout.</small> {% endcomment %}
           </div>
 
           {% form 'cart', cart, id: 'my-ajax-cart-form' %}
