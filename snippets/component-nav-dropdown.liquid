@@ -28,14 +28,21 @@
       width: 100%;
       font-size: 15px;
       line-height: 1.5;
-      padding: 30px 18px;
+      padding: 12px 18px;
       {% comment %} border-bottom: 1px solid rgb(var(--color-foreground), 0.2); {% endcomment %}
+    }
+
+    .header__menu-item{
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      gap: 1rem;
     }
   </style>
 {% endunless %}
 
 <style>
-  #main-header .menu-toggle:hover, #main-header ul a:hover{
+   .main-menu-link:hover{
     border-bottom: 1px rgba(72, 74, 72, 0.5) solid;
     transition: all 0.3s ease-in-out;
   }
@@ -81,6 +88,16 @@
     display: none;
   }
 
+  .menu-tag-new{
+    background-color: black;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 8px;
+    font-weight:bold;
+  }
+  
+
   @media screen and (max-width: 1024px) {
     .search-list-item {
       display: flex;
@@ -123,7 +140,7 @@
           {% unless nav_style == 'drawer' %}            
             @mouseenter="menuOpen = !menuOpen"
             :class="{ 'menu-open': menuOpen }"
-            class="menu-toggle"
+            class="menu-toggle main-menu-link"
           {% else %}
             class="menu-toggle menu-open"
           {% endunless %}
@@ -160,7 +177,15 @@
                     aria-current="page"
                   {% endif %}
                 >
+                  {% assign childlink_collection_url = childlink.url | escape | split: '/' | last %}
+                  {% assign new_tag = collections[childlink_collection_url].metafields.custom.new_tag %}
+                  
                   {{ childlink.title | escape }}
+                  {% if new_tag == "NEW" %}
+                    <span class="menu-tag-new" style="text-decoration: none;">
+                      NEW
+                    </span>
+                  {% endif %}      
                 </a>
               {% else %}
                 <button
@@ -200,6 +225,7 @@
         </ul>
       {% else %}
         <a
+          class="main-menu-link"
           href="{{ link.url }}"
           {% if link.current %}
             aria-current="page"
