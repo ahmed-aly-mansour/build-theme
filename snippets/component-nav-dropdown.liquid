@@ -3,7 +3,7 @@
     #main-header .nav-dropdown,
     #main-header .nav-dropdown_child {
       position: absolute;
-      top: 65%;
+      top: 60%;
       gap: 0;
       align-items: stretch;
       flex-direction: column;
@@ -16,10 +16,6 @@
       box-shadow: rgba(0, 0, 0, 0.1) 0 1px 3px 0, rgba(0, 0, 0, 0.06) 0 1px 2px 0;
       */
       border-top: 1px rgba(72, 74, 72, 0.1) solid;
-    }
-    #main-header .menu-toggle:hover{
-      border-bottom: 1px rgba(72, 74, 72, 0.5) solid;
-      transition: all 0.3s ease-in-out;
     }
 
     #main-header .nav-dropdown_child {
@@ -39,6 +35,11 @@
 {% endunless %}
 
 <style>
+  #main-header .menu-toggle:hover, #main-header a:hover{
+    border-bottom: 1px rgba(72, 74, 72, 0.5) solid;
+    transition: all 0.3s ease-in-out;
+  }
+
   .menu-drawer-search{
     display: flex;
     width: 100%;
