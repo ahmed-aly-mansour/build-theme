@@ -33,7 +33,7 @@
       font-size: 15px;
       line-height: 1.5;
       padding: 30px 18px;
-      border-bottom: 1px solid rgb(var(--color-foreground), 0.2);
+      {% comment %} border-bottom: 1px solid rgb(var(--color-foreground), 0.2); {% endcomment %}
     }
   </style>
 {% endunless %}
@@ -112,25 +112,41 @@
     </div>
   </li>
   {% for link in section.settings.menu.links %}
-    <li x-data="{ menuOpen: false, activeSubMenu: null }" @mouseleave="menuOpen = false; activeSubMenu = null">
+    <li 
+      {% unless nav_style == 'drawer' %}
+        x-data="{ menuOpen: false, activeSubMenu: null }" @mouseleave="menuOpen = false; activeSubMenu = null"
+      {% endunless %}
+    >
       {% if link.links != blank %}
         <button
-          @mouseenter="menuOpen = !menuOpen"
-          :class="{ 'menu-open': menuOpen }"
-          class="menu-toggle"
+          {% unless nav_style == 'drawer' %}            
+            @mouseenter="menuOpen = !menuOpen"
+            :class="{ 'menu-open': menuOpen }"
+            class="menu-toggle"
+          {% else %}
+            class="menu-toggle menu-open"
+          {% endunless %}
+          
         >
           
-          <a href="{{ link.url }}">
+          <a href="{{ link.url }}" 
+            {% if nav_style == 'drawer' %}            
+              style="padding: 0px; border:none;"
+          {% endif %}
+          >
           {{- link.title | escape -}}
         </a>
           {% comment %} {{- 'icon-caret.svg' | inline_asset_content -}} {% endcomment %}
         </button>
         <ul
-          x-show="menuOpen"
           class="nav-{{ nav_style }} color-{{ section.settings.menu_color_scheme }} gradient"
-          x-transition
           role="list"
-          x-cloak
+          
+          {% unless nav_style == 'drawer' %}
+            x-show="menuOpen"
+            x-transition
+            x-cloak
+          {% endunless %}
         >
           {%- for childlink in link.links -%}
 
@@ -147,8 +163,10 @@
                 </a>
               {% else %}
                 <button
-                  @click="activeSubMenu = (activeSubMenu === '{{ childlink.title | escape }}' ? null : '{{ childlink.title | escape }}')"
-                  :class="{ 'menu-open': activeSubMenu === '{{ childlink.title | escape }}' }"
+                  {% unless nav_style == 'drawer' %}                    
+                    @click="activeSubMenu = (activeSubMenu === '{{ childlink.title | escape }}' ? null : '{{ childlink.title | escape }}')"
+                    :class="{ 'menu-open': activeSubMenu === '{{ childlink.title | escape }}' }"
+                  {% endunless %}
                   class="menu-toggle"
                 >
                   {{- childlink.title | escape -}}
