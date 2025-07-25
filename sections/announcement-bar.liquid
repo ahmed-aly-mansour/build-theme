@@ -8,6 +8,14 @@
   assign text_color = section.settings.text_color
 -%}
 
+<style>
+  @media screen and (max-width: 1024px){
+    .announcement-bar{
+      display: hidden;    
+    }
+  }
+</style>
+
 {% if section.settings.show_announcement and section.blocks.size > 0 %}
   <div 
     class="announcement-bar"

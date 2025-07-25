@@ -26,9 +26,9 @@
     {% else %}
     auto 1fr auto
   {% endif %};
-  gap: 0 3rem;
   margin-inline: auto;
   /*
+  gap: 0 3rem;
   padding-top: {{ section.settings.padding_top }}px;
   padding-bottom: {{ section.settings.padding_bottom }}px;
   */
@@ -288,6 +288,10 @@
     }
     #predictive-search-wrapper {
         border-top: 1px solid rgba(var(--color-foreground),var(--popup-border-opacity));
+    }
+
+    .header-logo{
+      padding-inline: 20px;
     }
   }
   @media (min-width: 1024px) {
