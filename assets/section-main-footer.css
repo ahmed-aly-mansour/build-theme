@@ -803,3 +803,13 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
     height: 24px;
   }
 }
+.footer-block__brand-info{
+  min-width: 200px;
+}
+
+.footer-block__brand-info .rte p{
+  font-size: 20px;
+  letter-spacing: .5px;
+  line-height: 1.45;
+
+}

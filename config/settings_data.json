@@ -110,8 +110,8 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-3",
-    "brand_headline": "About Our Store",
-    "brand_description": "<p>Discover the benefits of our products through accurate descriptions based on scientific research and expert knowledge.</p>",
+    "brand_headline": "",
+    "brand_description": "<p>Stay up to date about product launches, makeup tips, and all things Jones Road</p>",
     "brand_image_width": 100,
     "social_facebook_link": "xxx",
     "social_instagram_link": "xxx",
@@ -165,38 +165,46 @@
           "link_list_j64d79": {
             "type": "link_list",
             "settings": {
-              "heading": "Customer Service",
-              "menu": "customer-account-main-menu"
+              "heading": "HELP",
+              "menu": "help"
             }
           },
           "link_list_tRGQXg": {
             "type": "link_list",
             "settings": {
-              "heading": "Quick links",
-              "menu": "footer"
+              "heading": "ABOUT",
+              "menu": "about"
             }
           },
           "social_icons_H6RVrc": {
             "type": "social_icons",
             "settings": {}
+          },
+          "link_list_XbdUAq": {
+            "type": "link_list",
+            "settings": {
+              "heading": "STORES",
+              "menu": "stores"
+            }
           }
         },
         "block_order": [
           "brand_information_6yLG3J",
           "link_list_j64d79",
           "link_list_tRGQXg",
-          "social_icons_H6RVrc"
+          "social_icons_H6RVrc",
+          "link_list_XbdUAq"
         ],
         "settings": {
           "color_scheme": "",
-          "newsletter_enable": true,
+          "newsletter_enable": false,
           "newsletter_heading": "Subscribe to our emails",
           "enable_follow_on_shop": true,
           "show_social": true,
           "enable_country_selector": true,
           "enable_language_selector": true,
-          "payment_enable": true,
-          "show_policy": true,
+          "payment_enable": false,
+          "show_policy": false,
           "margin_top": 64,
           "padding_top": 36,
           "padding_bottom": 36
