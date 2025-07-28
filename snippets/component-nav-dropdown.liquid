@@ -51,6 +51,8 @@
     transition: all 0.3s ease-in-out;
   }
 
+
+
   .menu-drawer-search{
     display: flex;
     width: 100%;
@@ -110,6 +112,9 @@
       font-size: 16px;
       letter-spacing: .4px;
     }
+    #menu-drawer{
+      background-color: #f6f2eb;
+    }
   }
 </style>
 
@@ -118,7 +123,7 @@
     class="menu-drawer_navigation"
   {% endif %}
 >
-  <li class="search-list-item">
+  <li class="search-list-item" style="background-color: white;">
     <div class="menu-drawer-search">
       <form action="{{ routes.search_url }}" method="get" role="search">
         {{ 'icon-search.svg' | inline_asset_content }}
@@ -176,7 +181,9 @@
         >
           {%- for childlink in link.links -%}
 
-            <li>
+            <li 
+            style="background-color: #f6f2eb;"
+            >
               {% if childlink.links == blank %}
                 <a
                   href="{{ childlink.url }}"

@@ -168,6 +168,7 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    padding: 18px 27px 18px 27px;
   }
 
   #header-search.active {
@@ -175,9 +176,12 @@
   }
   {%- if settings.predictive_search_enabled -%}
     #header-search predictive-search {
+      /*
       position: relative;
+      */
+
       display: flex;
-      width:min(750px, calc(100% - 3.5rem))
+      width: 100%;
     }
     #predictive-search-wrapper {
       position: absolute;
@@ -186,15 +190,22 @@
       background: rgb(var(--color-background));
       border: 1px solid rgba(var(--color-foreground),var(--popup-border-opacity));
       border-top: 0;
-      width: calc(100% - 2px);
+      width: 100%;
       max-height: 80vh;
       overflow-y: auto;
+    }
+
+    #predictive-search-results{
+      display: flex;
+      flex-direction: column-reverse;
     }
   {%- endif -%}
   #header-search form {
     position: relative;
+    /*
     border: 1px solid rgb(var(--color-foreground), 0.2);
-    width: min(750px, 100%);
+    */
+    width: 100%;
     height: 40px;
     display: flex;
     justify-content: space-between;
@@ -209,6 +220,7 @@
     background: transparent;
     outline: none;
     box-shadow: none;
+    border-bottom: 1px rgba(0,0,0, 1) solid;
   }
   /* clears the 'X' from Internet Explorer */
   #header-search form input[type='search']::-ms-clear,
@@ -318,8 +330,8 @@
     .cart-item-count-mobile{
       display: inline;
       position: absolute;
-      top: -2px;
-      left: 10px;
+      top: -10%;
+      left: 32%;
       color: white;
       z-index: 50;
     }
@@ -442,6 +454,7 @@
             x-ref="searchInput"
             x-show="searchOpen"
             @focus="$event.target.select()"
+            class="menu-drawer-search-input"
           >
           <button
             type="reset"
@@ -455,7 +468,7 @@
             {{- 'icon-close.svg' | inline_asset_content -}}
           </button>
           <button aria-label="Search">
-            {{- 'icon-search.svg' | inline_asset_content -}}
+            {{- 'icon-chevron-right.svg' | inline_asset_content -}}
           </button>
         </form>
       {%- endif -%}
