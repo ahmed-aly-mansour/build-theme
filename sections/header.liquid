@@ -257,6 +257,9 @@
     width: 20px;
     color: rgb(var(--color-foreground));
   }
+  .cart-item-count-mobile{
+    display: none;
+  }
 
   @media (min-width: 1024px) {
     {% unless section.settings.menu_type_desktop == 'drawer' %}
@@ -293,9 +296,7 @@
     .header-logo{
       padding-inline: 20px;
     }
-    .cart-item-count{
-      display:none;
-    }
+    
   }
   @media (min-width: 1024px) {
     .header-menu-position-center {
@@ -309,7 +310,20 @@
     .cart-item-count{
       display:inline;
     }
-    
+  }
+
+  @media (max-width: 768px){
+    .cart-item-count-mobile{
+      display: inline;
+      position: absolute;
+      top: -2px;
+      left: 10px;
+      color: white;
+      z-index: 50;
+    }
+    .cart-bag-word, .cart-item-count{
+      display: none;
+    }
   }
 
   #main-header nav ul,
@@ -408,7 +422,7 @@
           href="{{ routes.cart_url }}"
         {%- endif -%}
       >
-        {{ 'icon-cart.svg' | inline_asset_content }} Bag{% if cart.item_count > 0 %}<span class="cart-item-count">: {{cart.item_count}}</span>{% endif %}
+        {{ 'icon-cart.svg' | inline_asset_content }}<span class="cart-item-count-mobile">{{ cart.item_count }}</span> <span class="cart-bag-word"> Bag</span>{% if cart.item_count > 0 %}<span class="cart-item-count">: {{cart.item_count}}</span>{% endif %}
       </a>
     </div>
 
