@@ -181,8 +181,10 @@
         >
           {%- for childlink in link.links -%}
 
-            <li 
-            style="background-color: #f6f2eb;"
+            <li
+              {% if nav_style == 'drawer' %}
+                style="background-color: #f6f2eb;"
+              {% endif %}
             >
               {% if childlink.links == blank %}
                 <a
