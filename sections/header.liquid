@@ -159,7 +159,9 @@
 
   #header-search {
     position: absolute;
-    inset: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
     color: rgb(var(--color-foreground));
     background: rgb(var(--color-background));
     display: none;
@@ -462,6 +464,7 @@
       </button>
     </div>
   </header>
+  
 
   {%- if settings.cart_type == 'notification' -%}
     {%- render 'component-cart-notification',
