@@ -225,14 +225,14 @@
   }
 
   .hero-banner-section .hero-banner__heading {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .hero-banner-section .hero-banner__subheading {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   .hero-banner-section .hero-banner__button{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     max-width: 175px;
   }
 
