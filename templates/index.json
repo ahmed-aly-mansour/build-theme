@@ -58,27 +58,13 @@
           "settings": {
             "product": ""
           }
-        },
-        "product_card_RUFfmj": {
-          "type": "product_card",
-          "settings": {
-            "product": ""
-          }
-        },
-        "product_card_QizrFh": {
-          "type": "product_card",
-          "settings": {
-            "product": ""
-          }
         }
       },
       "block_order": [
         "block_1",
         "block_2",
         "product_card_bpd4Xd",
-        "product_card_tP6QmJ",
-        "product_card_RUFfmj",
-        "product_card_QizrFh"
+        "product_card_tP6QmJ"
       ],
       "settings": {
         "heading": "Featured Products",
