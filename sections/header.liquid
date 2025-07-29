@@ -349,9 +349,20 @@
     background: {{ section.settings.cart_count_color }};
     color: #fff;
   }
-</style>
 
-{% capture header_search %}
+  @media screen and (max-width: 1200px){
+    #header-search {
+      position: fixed;
+      margin-top: 38px;
+      top: 0;
+      left: auto;
+      right: 145px;
+      width: 260px;
+      }
+    }
+  </style>
+
+  {% capture header_search %}
   <div id="header-actions_search" @click="searchOpen = !searchOpen; $nextTick(() => { if (searchOpen) $refs.searchInput.focus() })">
     {{ 'icon-search.svg' | inline_asset_content }}
   </div>
