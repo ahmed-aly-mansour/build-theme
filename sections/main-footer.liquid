@@ -26,7 +26,7 @@
       <div class="footer__content-top page-width">
         <div class="footer__blocks-wrapper">
           {%- for block in section.blocks -%}
-            <div class="footer-block grid__item">
+            <div class="footer-block">
               {%- case block.type -%}
                 {%- when 'text' -%}
                   <h2 class="footer-block__heading inline-richtext">{{ block.settings.heading }}</h2>
@@ -45,7 +45,8 @@
                 {%- when 'social_icons' -%}
                   <h2 class="footer-block__heading inline-richtext">Follow Us</h2>
                   <div class="footer-block__details-content footer-block-social-icons">
-                    {%- render 'social-icons', class: 'footer__list-social' -%}
+                    {%- render 'social-icons', class: 'footer__list-social social-icons-mobile' -%}
+                    
                   </div>
                 {%- when 'brand_information' -%}
                   <div class="footer-block__brand-info">
@@ -75,6 +76,21 @@
                     {%- if block.settings.show_social and has_social_icons -%}
                       {%- render 'social-icons', class: 'footer__list-social' -%}
                     {%- endif -%}
+                    {% if section.settings.email_signup_enable %}
+                      <div class="email-signup-container">
+                        <form action="/contact#contact_form" method="post">
+                          <input type="hidden" name="form_type" value="cutomer">
+                          <input type="hidden" name="utf8" value="right">
+                          <div class="email-signup-input">
+                            <input type="email" name="contact[email]" id="email" placeholder="Email Address">
+                            <p>Sign Up for Free Shipping On Order Over $85 USD</p>
+                          </div>
+                          <div class="email-signup-button">
+                            <button type="submit">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    {% endif %}
                   </div>
                 {%- when 'image' -%}
                   <div class="footer-block__details-content footer-block-image {{ block.settings.alignment }}">
@@ -252,6 +268,7 @@
       "type": "text",
       "name": "t:sections.footer.blocks.text.name",
       "settings": [
+
         {
           "type": "inline_richtext",
           "id": "heading",
@@ -329,6 +346,12 @@
       "type": "header",
       "content": "t:sections.footer.settings.header__1.content",
       "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "email_signup_enable",
+      "default": true,
+      "label": "Show email Signup"
     },
     {
       "type": "checkbox",
