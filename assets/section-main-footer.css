@@ -56,6 +56,7 @@
 .footer__content-bottom {
   border-top: solid 0.1rem rgba(var(--color-foreground), 0.08);
   padding-top: 3rem;
+  
 }
 
 .footer__content-bottom:only-child {
@@ -64,6 +65,7 @@
 
 .footer__content-bottom-wrapper {
   display: flex;
+  flex-direction: row;
   width: 100%;
 }
 
@@ -302,21 +304,25 @@
     margin-top: 1.5rem;
   }
 }
-
+footer__content-bottom-wrapper
 .footer__content-bottom-wrapper--center {
   justify-content: center;
 }
 
 .footer__copyright {
-  text-align: center;
-  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 10px;
+  /* text-align: center;
+  margin-top: 1.5rem; */
 }
-
+/* 
 @media screen and (min-width: 750px) {
   .footer__content-bottom-wrapper:not(.footer__content-bottom-wrapper--center) .footer__copyright {
     text-align: right;
   }
-}
+} */
 
 @keyframes appear-down {
   0% {
@@ -487,10 +493,6 @@ li.list-social__item a{
   align-items: center;
 }
 
-.policies li::before {
-  content: '\00B7';
-  padding: 0 0.8rem;
-}
 
 .policies li a {
   padding: 0.6rem 0;
@@ -725,9 +727,9 @@ li.list-social__item a{
   display: flex !important;
   gap: 10px;
 }
-.footer__content-bottom {
+/* .footer__content-bottom {
   display: none;
-}
+} */
 .footer__payment-row {
   margin-top: 32px;
   text-align: center;
@@ -819,7 +821,20 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
 .list-social__item .svg-wrapper{
   display: none;
 }
-
+.policies{
+  display: inline-flex;
+  flex-direction: row;
+}
+.footer__content-top, .footer__content-bottom{
+  padding-bottom: 10px;
+  border: none;
+}
+.footer__content-bottom-wrapper {
+  align-items: start;
+}
+.footer__copyright > p{
+  margin: 0;
+}
 @media screen and (max-width: 1024px){
   .footer__blocks-wrapper {
     flex-direction: column;
@@ -839,6 +854,35 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
   }
   .footer__list-social{
     flex-direction: row !important;
+  }
+  
+  .footer__content-bottom .page-width {
+    padding: 0px;
+  }
+  .footer__content-bottom {
+    max-width: 600px;
+    border: none;
+    margin-left: auto;
+    margin-right: auto ;
+  }
+  .footer__content-bottom-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .footer__copyright{
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    list-style: none;
+    align-items: end;
+  }
+  
+  .policies{
+    flex-direction: column;
+    align-items: start;
   }
 }
 
