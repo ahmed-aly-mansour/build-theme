@@ -40,11 +40,6 @@
     --hero-button-text-color: {{ button_text_color }};
     /* Add more variables here if needed for other settings */
   }
-  @media screen and (max-width: 768px){
-    #{{ section_id }}{
-      --hero-vertical-alignment: {{vertical_alignment}};
-    }
-  }
 </style>
 <div id="{{ section_id }}" class="hero-banner hero-banner-section">
   <div class="hero-banner__background">
@@ -114,6 +109,7 @@
     {% endif %}
 
     {% if button_text != blank and button_link != blank %}
+      
       <a href="{{ button_link }}" class="hero-banner__button">
         {{ button_text | escape }}
       </a>
@@ -133,6 +129,7 @@
     </div>
   {% endif %}
 </div>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -165,6 +162,17 @@
     }
   {% endif %}
 
+  #shopify-section-{{ section.id }} .hero-banner__button{
+    color: {{ section.settings.button_text_color }};
+    background-color: {{section.settings.button_color}};
+    border: 1px solid {{section.settings.button_color}};
+  }
+  #shopify-section-{{ section.id }} .hero-banner__button:hover{
+    color: {{ section.settings.button_color }};
+    background-color: transparent;
+  }
+
+  
 </style>
 
 {% schema %}
