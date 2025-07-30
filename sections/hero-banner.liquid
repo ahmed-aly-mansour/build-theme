@@ -41,7 +41,6 @@
     /* Add more variables here if needed for other settings */
   }
   @media screen and (max-width: 768px){
-    {{ assign vertical_alignment = "bottom" }}
     #{{ section_id }}{
       --hero-vertical-alignment: {{vertical_alignment}};
     }
@@ -95,13 +94,19 @@
     <div class="hero-banner__background-overlay"></div>
   </div>
 
-  <div class="hero-banner__content hero-banner__content--h-{{ content_alignment }} hero-banner__content--v-{{ vertical_alignment }}">
+  <div class="hero-banner__content hero-banner__content--h-{{ content_alignment }} hero-banner__content--v-{{ vertical_alignment }}"
+    {% if section.settings.mobile_vertical_alignment == "bottom"%}
+      style="margin-bottom: 0px"
+    {% elsif section.settings.mobile_vertical_alignment == "top"%}
+      style="margin-top: 0px"
+    {% endif %}
+  >
     {% if stars_text != blank %}
       <div class="hero-banner__stars"><span class="stars">★★★★★</span> {{ stars_text }}</div>
     {% endif %}
 
     {% if heading != blank %}
-      <h2 class="hero-banner__heading">{{ heading | escape }}</h2>
+      <h2 class="hero-banner__heading" style="background-color: {{ section.settings.bg_color }}">{{ heading | escape }}</h2>
     {% endif %}
 
     {% if subheading != blank %}
@@ -246,10 +251,38 @@
       "default": "bottom"
     },
     {
+      "type": "select",
+      "id": "mobile_content_alignment",
+      "label": "Mobile Horizontal Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "mobile_vertical_alignment",
+      "label": "Mobile Vertical Alignment",
+      "options": [
+        { "value": "top", "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "bottom", "label": "Bottom" }
+      ],
+      "default": "bottom"
+    },
+    {
       "type": "color",
       "id": "text_color",
       "label": "Text Color",
       "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Title Background Color",
+      "default": "#FFFFFF00"
     },
     {
       "type": "text",

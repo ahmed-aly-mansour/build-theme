@@ -5,7 +5,7 @@
     background: #fff;
     width: 100%;
     {% if section.settings.show_line_separator %}
-      border-bottom: 1px solid rgb(var(--color-foreground), 0.2);
+      border-bottom: 1px solid #ebebeb;
     {% endif %}
     z-index: 9;
     transition: top 150ms ease-out;
@@ -406,7 +406,7 @@
     <a href="{{ routes.root_url }}" class="header-shop_link" style="display: flex">
       {% if settings.logo != blank %}
         {% comment %} {{ 'icon-logo.svg' | inline_asset_content }} {% endcomment %}
-        {{ settings.logo | image_url: width: 250 | image_tag: class: 'header-logo' }}
+        {{ settings.logo | image_url: width: 200 | image_tag: class: 'header-logo' }}
       {% else %}
         <span class="header-shop_name">{{ shop.name }}</span>
       {% endif %}

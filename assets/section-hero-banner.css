@@ -1,5 +1,5 @@
 /* Assets/section-hero-banner.css */
-.hero-banner-section {
+.section-hero-banner {
   --ratio-mobile: 0.7262411347517731;
   --ratio-desktop: 2.32;
 }
@@ -8,15 +8,17 @@
   position: relative;
   color: var(--hero-text-color, #FFFFFF); /* Use variable, provide fallback */
   padding: 60px 20px;
-  min-height: 448px;
+  /* min-height: 448px; */
   background-color: #000;
   overflow: hidden;
+  height: 100%;
 }
-.hero-banner__background{
+.section-hero-banner{
   aspect-ratio: var(--ratio-mobile);
 }
-@media screen  and (min-width: 768px) {
-  .hero-banner__background{
+
+@media (min-width: 768px) {
+  .section-hero-banner{
     aspect-ratio: var(--ratio-desktop);
   }
 }
