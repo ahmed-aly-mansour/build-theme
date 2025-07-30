@@ -1,12 +1,24 @@
 /* Assets/section-hero-banner.css */
+.hero-banner-section {
+  --ratio-mobile: 0.7262411347517731;
+  --ratio-desktop: 2.32;
+}
 
 .hero-banner-section {
   position: relative;
   color: var(--hero-text-color, #FFFFFF); /* Use variable, provide fallback */
   padding: 60px 20px;
-  min-height: 600px;
+  min-height: 448px;
   background-color: #000;
   overflow: hidden;
+}
+.hero-banner__background{
+  aspect-ratio: var(--ratio-mobile);
+}
+@media screen  and (min-width: 768px) {
+  .hero-banner__background{
+    aspect-ratio: var(--ratio-desktop);
+  }
 }
 
 .hero-banner-section .hero-banner__background {
@@ -41,12 +53,12 @@
   position: absolute;
   z-index: 3;
   max-width: 50%;
-  padding: 0 5%;
+  padding: 0 48px;
 }
 
 /* Horizontal content alignment classes */
 .hero-banner-section .hero-banner__content--h-left {
-  left: 5%;
+  left: 0%;
   right: auto;
   text-align: left;
 }
@@ -97,34 +109,54 @@
 
 .hero-banner-section .hero-banner__heading {
   font-family: BaseMonoWideWeb,Courier,Courier New,sans-serif;
-  font-size: 4.4rem;
+  font-size: 39px;
   margin-bottom: 5px;
   font-weight: bold;
   line-height: 1.2;
   color: var(--hero-text-color, #FFFFFF); /* Explicitly use variable */
   background-color: #fff;
+  /* width: 60%; */
 }
 
 .hero-banner-section .hero-banner__subheading {
-  font-size: 2.2rem;
+  font-size: 18px;
+  line-height: 2;
   margin-bottom: 20px;
   max-width: 600px;
+  /* width: 85%; */
 }
 
+@media screen and (max-width: 900px) {
+  .hero-banner-section .hero-banner__heading{
+    font-size: 18px;
+    /* width: 80%; */
+  }
+  .hero-banner-section .hero-banner__subheading {
+    font-size: 12px;
+    line-height: 1.4;
+    /* width: 35%; */
+  }
+}
 .hero-banner-section .hero-banner__button {
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 3px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
   display: inline-block;
-  padding: 10px 30px 10px 30px;
-  background-color: var(--hero-button-color, #FFFFFF);
-  color: var(--hero-button-text-color, #000000);
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  max-width: 211px;
-  width: 100%;
-  text-transform: uppercase;
-  font-size: 2rem;
+  font-family: 'BaseMonoWideWeb', Courier, Courier New, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  height: 40px;
+  letter-spacing: 1.02px;
+  line-height: 40px;
+  padding: 0 36px;
   text-align: center;
-  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all .4s cubic-bezier(.39,.575,.565,1);
+  text-decoration: none;
 }
 
 .hero-banner-section .hero-banner__button:hover {

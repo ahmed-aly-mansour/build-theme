@@ -40,8 +40,13 @@
     --hero-button-text-color: {{ button_text_color }};
     /* Add more variables here if needed for other settings */
   }
+  @media screen and (max-width: 768px){
+    {{ assign vertical_alignment = "bottom" }}
+    #{{ section_id }}{
+      --hero-vertical-alignment: {{vertical_alignment}};
+    }
+  }
 </style>
-
 <div id="{{ section_id }}" class="hero-banner hero-banner-section">
   <div class="hero-banner__background">
     {% if background_type == 'video' %}
@@ -123,6 +128,16 @@
     </div>
   {% endif %}
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const heroSection = document.querySelector(".hero-banner__content");
+    if (window.innerWidth <= 768 && heroSection) {
+      heroSection.classList.remove('hero-banner__content--v-center');
+      heroSection.classList.add('hero-banner__content--v-bottom');
+    }
+  });
+</script>
 
 <style>
   #image_background_pc {
