@@ -31,12 +31,16 @@
 <style>
   .icon-bar-section {
     padding: 20px 0;
+    height: 112px;
+    display: flex;
   }
+
 
   .icon-bar-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
   }
 
   .icon-bar-item {
@@ -79,6 +83,11 @@
 
   /* Responsive adjustments */
   @media (max-width: 768px) {
+    .icon-bar-section {
+      padding: 27px 0;
+      height: 90px;
+    }
+
     .icon-bar-container {
       overflow-x: auto; /* Enable horizontal scrolling */
      -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */

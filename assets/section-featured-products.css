@@ -1,9 +1,9 @@
 /* sections/featured-products.liquid */
 
-.featured-products-section {
+/* .featured-products-section {
   padding-top: 3rem;
   padding-bottom: 3rem;
-}
+} */
 
 .featured-products__header {
   display: flex;
@@ -386,7 +386,7 @@
 @media (max-width: 750px) {
   .featured-products-content{
     width: 100%;
-    padding-top: 6rem;
+    /* padding-top: 6rem; */
   }
   .featured-products__view-all-button{
     width: 100%;
@@ -494,7 +494,7 @@
 }
 
 .swiper-slide {
-  width: auto !important;
+  /* width: auto !important; */
   height: auto !important;
   box-sizing: border-box;
 }
