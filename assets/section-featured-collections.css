@@ -1,23 +1,28 @@
 /* sections/featured-collections.liquid */
 
 .featured-collections-section {
-  padding-top: 11rem;
-  padding-bottom: 3rem;
-  max-width: 1280px;
+  /* padding-top: 11rem;
+  padding-bottom: 3rem; */
+  /* max-width: 1280px; */
   padding-left: 0px;
   padding-right: 0px;
+  width: 100%;
 }
 
 .featured-collections__header {
   text-align: left; /* Align header text left */
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .featured-collections__heading {
-  font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1.61px;
+  margin-bottom: .5rem;
   text-transform: uppercase;
+  margin-top: 0;
+  font-family: Proxima-Nova, GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -1.3px;
 }
 
 .featured-collections__subheading {
@@ -179,7 +184,7 @@
     gap: 1.5rem;
   } */
   .featured-collections__card.grid__item {
-    width: 100%;
+    /* width: 100%; */
     max-width: 100%;
     margin: 0;
   }
@@ -189,9 +194,9 @@
     margin: auto;
     width: 100%;
   }
-  .collection-card__image-wrapper.media--portrait {
+  /* .collection-card__image-wrapper.media--portrait {
     padding-bottom: 72%!important;
-  }
+  } */
   .featured-collections__heading{
     font-size: 2.5rem;
   }
