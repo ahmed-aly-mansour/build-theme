@@ -108,6 +108,11 @@
   text-transform: uppercase;
   transition: all .4s cubic-bezier(.39,.575,.565,1);
   text-decoration: none;
+  color: black;
+}
+.collection-card__info--btn-right a:hover{
+  background: transparent;
+  color: white;
 }
 .collection-card__info {
   position: absolute;
