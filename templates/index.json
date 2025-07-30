@@ -81,6 +81,50 @@
         "stars_color": "#000000"
       }
     },
+    "icon_bar_XhA8jF": {
+      "type": "icon-bar",
+      "blocks": {
+        "icon_block_W8wKCe": {
+          "type": "icon_block",
+          "settings": {
+            "icon": "shopify://shop_images/vogue-logo-whote_x26_18f97c43-ad26-4ee6-93f8-511d8b88162c.webp",
+            "text": ""
+          }
+        },
+        "icon_block_7VtXGA": {
+          "type": "icon_block",
+          "settings": {
+            "icon": "shopify://shop_images/wsj-3x_x26_5c8598df-7b8f-4dff-9bcd-0bc278ae56b8.webp",
+            "text": ""
+          }
+        },
+        "icon_block_7T8reN": {
+          "type": "icon_block",
+          "settings": {
+            "icon": "shopify://shop_images/FC_Logo_2018_amgwhf_x26_819a0bb8-c4a9-4dbc-b7d3-7943f48cd391.webp",
+            "text": ""
+          }
+        },
+        "icon_block_zmJHJY": {
+          "type": "icon_block",
+          "settings": {
+            "icon": "shopify://shop_images/Allure_logo.svg_x26_2cea13d6-14b6-4b2d-ada3-7cffc3640f50.webp",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_block_W8wKCe",
+        "icon_block_7VtXGA",
+        "icon_block_7T8reN",
+        "icon_block_zmJHJY"
+      ],
+      "name": "Icon Bar",
+      "settings": {
+        "background_color": "#000000",
+        "text_color": "#FFFFFF"
+      }
+    },
     "featured_collections_example": {
       "type": "featured-collections",
       "blocks": {
@@ -387,6 +431,7 @@
   "order": [
     "hero_banner_1",
     "featured_products_example",
+    "icon_bar_XhA8jF",
     "featured_collections_example",
     "exclusive_section_NfqBik",
     "custom_testimonials_7UWRGN",
