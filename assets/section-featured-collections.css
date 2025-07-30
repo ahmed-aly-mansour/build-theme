@@ -36,7 +36,6 @@
   margin: 0; /* Remove default grid margin if any */
   padding: 0; /* Remove default grid padding if any */
   /* Uses base.css flexbox grid */
-  display: flex;
   overflow-x: hidden;
 }
 
@@ -202,9 +201,9 @@
   /* .collection-card__image-wrapper.media--portrait {
     padding-bottom: 72%!important;
   } */
-  .featured-collections__heading{
+  /* .featured-collections__heading{
     font-size: 2.5rem;
-  }
+  } */
   .collection-card__info--below .collection-card__title{
     font-size: 2rem;
     font-weight: 600;

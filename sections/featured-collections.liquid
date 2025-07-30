@@ -1,6 +1,8 @@
 {% comment %} /sections/featured-collections.liquid {% endcomment %}
-
+{{ 'swiper7.4.1.min.css' | asset_url | stylesheet_tag }}
 {{ 'section-featured-collections.css' | asset_url | stylesheet_tag }}
+<script src="{{ "swiper7.4.1.min.js" | asset_url }}" defer="defer" id="swiper-script"></script>
+<script src="{{ 'component-featured-collections-slider.js' | asset_url }}" defer="defer"></script>
 
 {%- liquid
   assign heading = section.settings.heading
@@ -13,7 +15,7 @@
 -%}
 
 {%- if collections_to_show > 0 -%}
-  <div class="featured-collections-section page-width">
+  <featured-collections data-section-id="{{ section.id }}" class="featured-collections-section" style="position: relative;">
     <div class="featured-collections__header title-wrapper title-wrapper--no-top-margin page-width" style="text-align: {{ heading_alignment }};">
       {%- if heading != blank -%}
         <h2 class="featured-collections__heading title h2">{{ heading | escape }}</h2>
@@ -22,10 +24,13 @@
         <p class="featured-collections__subheading subtitle">{{ subheading | escape }}</p>
       {%- endif -%}
     </div>
+  
+  {% comment %} <div class="page-width"> {% endcomment %}
 
     {% comment %} Use the grid classes from base.css (flexbox based) {% endcomment %}
     {%- assign grid_classes = '' -%}
-    <div class="featured-collections__grid {{ grid_classes }}">
+    <div class="featured-collections__grid {{ grid_classes }} swiper" id="featured-collections-{{ section.id }}">
+      <div class="swiper-wrapper">
       {%- for block in section.blocks -%}
         {%- assign collection = block.settings.collection -%}
         {%- assign custom_image = block.settings.custom_image -%}
@@ -33,14 +38,14 @@
         {%- assign collection_image = custom_image | default: collection.featured_image | default: collection.image -%}
         {%- assign display_title = custom_title | default: collection.title -%}
 
-        <div class="featured-collections__card grid__item" {{ block.shopify_attributes }}>
+        <div class="featured-collections__card grid__item swiper-slide" {{ block.shopify_attributes }}>
           {% unless style == 'style3' %}
             <a
               href="{{ collection.url | default: '#' }}"
               class="collection-card__link {% if style == 'style2' %} collection-card__link--below{% endif %} {% if style == 'style3' %} collection-card__link--btn-right{% endif %}"
             >
           {% endunless %}
-            <div class="collection-card__image-wrapper media media--portrait {% if collection_image == blank %} placeholder {% endif %}">
+            <div class="media media--portrait {% if collection_image == blank %} placeholder {% endif %}">
               {%- if collection_image != blank -%}
                 <img
                   srcset="
@@ -89,8 +94,10 @@
             {% endunless %}
         </div>
       {%- endfor -%}
+      </div>
     </div>
-  </div>
+  {% comment %} </div> {% endcomment %}
+</featured-collections>
 {%- endif -%}
 
 {% schema %}

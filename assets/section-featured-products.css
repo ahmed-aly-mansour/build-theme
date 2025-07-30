@@ -490,7 +490,7 @@
   height: auto;
 }
 
-.swiper-wrapper {
+.featured-products__swiper .swiper-wrapper {
   display: grid !important; /* Swiper sets this when using grid */
   row-gap: 20px;
 }
