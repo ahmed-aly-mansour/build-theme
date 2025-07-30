@@ -19,8 +19,11 @@
         "overlay_color": "#d9d9d9",
         "overlay_opacity": 30,
         "content_alignment": "left",
-        "vertical_alignment": "bottom",
+        "vertical_alignment": "center",
+        "mobile_content_alignment": "left",
+        "mobile_vertical_alignment": "bottom",
         "text_color": "#000000",
+        "bg_color": "#ffffff",
         "stars_text": "",
         "heading": "New: Miracle Balm Palettes Are Here",
         "subheading": "The best seller is back — explore limited-edition trios of new & exclusive shades.",
@@ -122,7 +125,7 @@
       "name": "Icon Bar",
       "settings": {
         "background_color": "#000000",
-        "text_color": "#FFFFFF"
+        "text_color": "#ffffff"
       }
     },
     "featured_collections_example": {
@@ -131,37 +134,28 @@
         "block_1": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "face",
             "custom_title": ""
           }
         },
         "block_2": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "kits",
             "custom_title": ""
           }
         },
         "block_3": {
           "type": "collection_card",
           "settings": {
-            "collection": "",
+            "collection": "lips",
             "custom_title": ""
           }
         },
         "block_4": {
           "type": "collection_card",
-          "disabled": true,
           "settings": {
-            "collection": "",
-            "custom_title": ""
-          }
-        },
-        "block_5": {
-          "type": "collection_card",
-          "disabled": true,
-          "settings": {
-            "collection": "",
+            "collection": "eyes",
             "custom_title": ""
           }
         }
@@ -170,16 +164,63 @@
         "block_1",
         "block_2",
         "block_3",
-        "block_4",
-        "block_5"
+        "block_4"
       ],
       "settings": {
-        "heading": "EXPLORE OUR CATEGORIES",
+        "heading": "SHOP BY COLLECTION",
         "subheading": "",
-        "heading_alignment": "center",
-        "style": "style2",
+        "heading_alignment": "left",
+        "style": "style3",
         "text_color": "#000000",
         "hide_shop_now": true
+      }
+    },
+    "exclusie_icons_with_text_K6q6tD": {
+      "type": "icons-with-text",
+      "blocks": {
+        "icon_text_7yeU4h": {
+          "type": "icon_text",
+          "settings": {
+            "icon_svg": "",
+            "icon_color": "#000000",
+            "title": "Clean, strategic, high-grade formulations that work on every skin type and tone—and that are as simple to use as they are to master. Jones Road is a lifetime of beauty knowledge, distilled.",
+            "title_color": "#000000",
+            "subtitle": "— Bobbi Brown, founder",
+            "subtitle_color": "#000000"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_7yeU4h"
+      ],
+      "name": "Exclusie Icons With Text",
+      "settings": {}
+    },
+    "hero_banner_NxhDbf": {
+      "type": "hero-banner",
+      "name": "Hero Banner",
+      "settings": {
+        "background_type": "image",
+        "image_background": "shopify://shop_images/Group_1123_2_x780_8e70d3c6-7816-4c4a-8eef-a5bf9b729916.webp",
+        "image_background_mobile": "shopify://shop_images/Desktop_1600x_1fb8bc9c-0855-4414-9c6e-0e3377e82202.webp",
+        "video_background_url": "",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "content_alignment": "left",
+        "vertical_alignment": "center",
+        "mobile_content_alignment": "left",
+        "mobile_vertical_alignment": "top",
+        "text_color": "#ffffff",
+        "bg_color": "rgba(0,0,0,0)",
+        "stars_text": "",
+        "heading": "Everyday Sunscreen — Your New Non-Negotiable",
+        "subheading": "A lightweight, smooth, and makeup-friendly mineral sunscreen is finally here.",
+        "button_text": "SHOP NOW",
+        "button_link": "shopify://collections/shop-all",
+        "button_color": "#ffffff",
+        "button_text_color": "#000000",
+        "show_endorsement": false,
+        "endorsement_name": "TJ Oshie"
       }
     },
     "exclusive_section_NfqBik": {
@@ -298,63 +339,6 @@
         "heading": "PROGRAM FAQS"
       }
     },
-    "exclusie_icons_with_text_K6q6tD": {
-      "type": "icons-with-text",
-      "blocks": {
-        "icon_text_7yeU4h": {
-          "type": "icon_text",
-          "settings": {
-            "icon_svg": "",
-            "icon_color": "#000000",
-            "title": "FREE SHIPPING",
-            "title_color": "#000000",
-            "subtitle": "Free shipping over $150 USD",
-            "subtitle_color": "#4d4d4d"
-          }
-        },
-        "icon_text_4wWPPL": {
-          "type": "icon_text",
-          "settings": {
-            "icon_svg": "",
-            "icon_color": "#000000",
-            "title": "28 DAY FREE RETURNS",
-            "title_color": "#000000",
-            "subtitle": "Free Returns: Link to See conditions for Free Returns",
-            "subtitle_color": "#4d4d4d"
-          }
-        },
-        "icon_text_nGXTQV": {
-          "type": "icon_text",
-          "settings": {
-            "icon_svg": "",
-            "icon_color": "#000000",
-            "title": "PAYMENT OPTIONS",
-            "title_color": "#000000",
-            "subtitle": "We accept all credit Cards: Klarna, PayPal, Shop Pay Installments by Affirm, etc.",
-            "subtitle_color": "#4d4d4d"
-          }
-        },
-        "icon_text_XmRJK4": {
-          "type": "icon_text",
-          "settings": {
-            "icon_svg": "",
-            "icon_color": "#000000",
-            "title": "HERE FOR YOU",
-            "title_color": "#000000",
-            "subtitle": "customerservice@dummy.com (000) 000-0000",
-            "subtitle_color": "#4d4d4d"
-          }
-        }
-      },
-      "block_order": [
-        "icon_text_7yeU4h",
-        "icon_text_4wWPPL",
-        "icon_text_nGXTQV",
-        "icon_text_XmRJK4"
-      ],
-      "name": "Exclusie Icons With Text",
-      "settings": {}
-    },
     "style_gallery_gki89j": {
       "type": "style-gallery",
       "blocks": {
@@ -426,6 +410,26 @@
         "email_align": "left",
         "button_align": "center"
       }
+    },
+    "sales_banner_6GTtKd": {
+      "type": "sales-banner",
+      "name": "Sales Banner",
+      "settings": {
+        "title": "This store is exclusive to Carvana employees &amp; select customers",
+        "subtitle": "Please log in to access your account.",
+        "button_text": "Login to your account",
+        "title_mobile": "This store is exclusive to Carvana employees &amp; select customers",
+        "subtitle_mobile": "Please log in to access your account.",
+        "button_text_mobile": "Login to your account",
+        "title_color": "#183558",
+        "title_color_mobile": "#183558",
+        "subtitle_color": "#183558",
+        "subtitle_color_mobile": "#183558",
+        "button_color": "#ffffff",
+        "button_color_mobile": "#ffffff",
+        "button_bg_color": "#00aed9",
+        "button_bg_color_mobile": "#00aed9"
+      }
     }
   },
   "order": [
@@ -433,11 +437,13 @@
     "featured_products_example",
     "icon_bar_XhA8jF",
     "featured_collections_example",
+    "exclusie_icons_with_text_K6q6tD",
+    "hero_banner_NxhDbf",
     "exclusive_section_NfqBik",
     "custom_testimonials_7UWRGN",
     "exclusie_faq_g9G4yC",
-    "exclusie_icons_with_text_K6q6tD",
     "style_gallery_gki89j",
-    "newsletter_signup_GGiDB7"
+    "newsletter_signup_GGiDB7",
+    "sales_banner_6GTtKd"
   ]
 }
