@@ -839,6 +839,7 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
 }
 .footer__content-bottom-wrapper {
   align-items: end;
+  padding-bottom: 30px;
 }
 .footer__copyright > p{
   margin: 0;
