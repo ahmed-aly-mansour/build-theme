@@ -116,6 +116,7 @@
   display: flex; /* Allow inner content to flex */
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .product-card__link {
@@ -131,6 +132,21 @@
   overflow: hidden;
   aspect-ratio: 1 / 1.2; /* Adjust aspect ratio as needed */
   background-color: #f5f5f5; /* Placeholder background */
+  transition: transform 900ms ease-in-out;
+}
+.prod-main-image {
+  position: absolute;
+  z-index: 2;
+}
+
+.prod-hover-image {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.product-card__image-wrapper:hover .prod-main-image {
+  opacity: 0;
 }
 
 .product-card__image {

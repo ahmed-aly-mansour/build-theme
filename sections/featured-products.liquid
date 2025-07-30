@@ -87,17 +87,9 @@
                         loading="lazy"
                         width="264"
                         height="317"
-                        class="product-card__image prod-main-image-{{ image.alt | escape}}"
+                        class="product-card__image prod-main-image"
                       >
                       {% if product.images.size > 1 %}
-                        <style>
-                          .prod-main-image-{{ image.alt | escape }}:hover{
-                           display: none;
-                          }
-                          .prod-hover-image:hover{
-                          display: block;
-                        }
-                        </style>
                         {%- assign image = product.images[1] -%}
                         <img
                           srcset="
