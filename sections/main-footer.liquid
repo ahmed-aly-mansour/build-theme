@@ -43,7 +43,7 @@
                     </ul>
                   {%- endif -%}
                 {%- when 'social_icons' -%}
-                  <h2 class="footer-block__heading inline-richtext">Follow Us</h2>
+                  <h2 class="footer-block__heading inline-richtext">CONNECT</h2>
                   <div class="footer-block__details-content footer-block-social-icons">
                     {%- render 'social-icons', class: 'footer__list-social social-icons-mobile' -%}
 
@@ -202,7 +202,7 @@
       <div class="footer__copyright caption">
         <p>
           <small class="copyright__content">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url -}}</small>
-          <small class="copyright__content">{{ powered_by_link }}</small>
+          {% comment %} <small class="copyright__content">{{ powered_by_link }}</small> {% endcomment %}
         </p>
         {%- if section.settings.show_policy -%}
           <ul class="policies list-unstyled">
