@@ -13,11 +13,11 @@
 }
 
 .featured-collections__heading {
-  margin-bottom: 0.5rem; /* Adjust spacing */
-  font-weight: bold; /* Make heading bold */
-  color: #000000; /* Make heading black */
-  font-size: 3.6rem; /* Match featured products heading size */
-  /* Inherits h2 style */
+  font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.61px;
+  text-transform: uppercase;
 }
 
 .featured-collections__subheading {
@@ -30,8 +30,9 @@
 .featured-collections__grid {
   margin: 0; /* Remove default grid margin if any */
   padding: 0; /* Remove default grid padding if any */
-  gap: 25px;
   /* Uses base.css flexbox grid */
+  display: flex;
+  overflow-x: hidden;
 }
 
 .featured-collections__card.grid__item {
@@ -74,7 +75,35 @@
 .collection-card__link:hover .collection-card__image {
   transform: scale(1.05); /* Optional: zoom effect on hover */
 }
+.collection-card__info--btn-right{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 1.5rem 1rem; /* Adjust padding as needed */
+  color: #ffffff; /* White text */
+  z-index: 2;
+  }
 
+.collection-card__info--btn-right a{
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  height: 40px;
+  letter-spacing: 1.02px;
+  line-height: 40px;
+  padding: 0 16px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all .4s cubic-bezier(.39,.575,.565,1);
+  text-decoration: none;
+}
 .collection-card__info {
   position: absolute;
   bottom: 0;
@@ -144,11 +173,11 @@
 }
 
 @media (max-width: 750px) {
-  .featured-collections__grid {
+  /* .featured-collections__grid {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-  }
+  } */
   .featured-collections__card.grid__item {
     width: 100%;
     max-width: 100%;
