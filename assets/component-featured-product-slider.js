@@ -1,3 +1,8 @@
+import Swiper from 'swiper';
+import { Grid, Navigation } from 'swiper/modules';
+
+Swiper.use([Grid, Navigation]);
+
 class FeaturedProducts extends HTMLElement {
   constructor() {
     super();
@@ -29,20 +34,28 @@ class FeaturedProducts extends HTMLElement {
       // Prevent duplicate swiper initialization
       if (!swiperEl || swiperEl.classList.contains('swiper-initialized')) return;
 
-      this.swiper = new Swiper(selector, {
-        slidesPerView: 1.8,
-        spaceBetween: 16,
+      this.swiper = new Swiper(swiperEl, {
+        slidesPerView: 2,
+        grid: {
+          rows: 2,
+        },
         autoHeight: true,
-        navigation: {
-          nextEl: `${selector} .featured-products__swiper-next`,
-          prevEl: `${selector} .featured-products__swiper-prev`,
-        },
-        breakpoints: {
-          750: { slidesPerView: 2, centeredSlides: false },
-          990: { slidesPerView: 4, centeredSlides: false },
-        },
+        // breakpoints: {
+        //   300: {
+        //     slidesPerView: 2,
+        //     grid: {
+        //       rows: 2,
+        //     },
+        //   },
+        //   700: {
+        //     slidesPerView: 4,
+        //     grid: {
+        //       rows: 1,
+        //     },
+        //   },
+        // },
         loop: false,
-        watchOverflow: true,
+        watchOverflow: false,
       });
     }
   }

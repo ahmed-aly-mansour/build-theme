@@ -38,25 +38,25 @@
         "block_1": {
           "type": "product_card",
           "settings": {
-            "product": ""
+            "product": "amazing-watch"
           }
         },
         "block_2": {
           "type": "product_card",
           "settings": {
-            "product": ""
+            "product": "blue-silk-tuxedo"
           }
         },
         "product_card_bpd4Xd": {
           "type": "product_card",
           "settings": {
-            "product": ""
+            "product": "navy-sport-jacket"
           }
         },
         "product_card_tP6QmJ": {
           "type": "product_card",
           "settings": {
-            "product": ""
+            "product": "chequered-red-shirt"
           }
         }
       },
@@ -69,7 +69,7 @@
       "settings": {
         "heading": "Featured Products",
         "subheading": "",
-        "view_all_text": "View All",
+        "view_all_text": "See All",
         "view_all_url": "shopify://products/acb-top-in-chipped-brick",
         "heading_alignment": "left",
         "show_view_all_as_button": false,

@@ -329,13 +329,17 @@
   @media (max-width: 768px){
     .cart-item-count-mobile{
       display: inline;
-      position: absolute;
+      {% comment %} position: absolute;
       top: -10%;
-      left: 32%;
+      left: 32%; {% endcomment %}
       color: white;
       z-index: 50;
+      background: black;
+      padding: 2px 13px;
+      border-radius: 100%;
     }
-    .cart-bag-word, .cart-item-count{
+    
+    #header-cart-bubble > svg, .cart-bag-word, .cart-item-count{
       display: none;
     }
   }
@@ -350,7 +354,7 @@
     color: #fff;
   }
 
-  @media screen and (max-width: 1200px){
+  @media screen and (min-width: 1280px){
     #header-search {
       position: fixed;
       margin-top: 38px;
