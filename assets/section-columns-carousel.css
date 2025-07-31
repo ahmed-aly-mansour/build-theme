@@ -168,27 +168,21 @@ font-style: italic; /* Make subheading italic */
     font-family: monospace; /* Optional: makes spacing consistent */
     letter-spacing: -3.5px;
     white-space: nowrap;
-  }
+}
   
-  .swiper-pagination-fraction .swiper-pagination-current,
-  .swiper-pagination-fraction .swiper-pagination-total {
+.swiper-pagination-fraction .swiper-pagination-current,
+.swiper-pagination-fraction .swiper-pagination-total {
     margin: 0;
     padding: 0;
-  }
-  
-  .swiper-pagination-fraction {
-    /* Remove spacing around the slash */
-  }
-  
-  .swiper-pagination-fraction::after {
-    content: none; /* Ensure no pseudo spacing exists */
-  }
+}
 
+.swiper-pagination-fraction::after {
+    content: none; /* Ensure no pseudo spacing exists */
+}
 
 .columns-carousel-content{
     padding-bottom: 80px;
 }
-
 .swiper-pagination{
     bottom: 30px !important;
 }
