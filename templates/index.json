@@ -222,6 +222,10 @@
         "show_endorsement": false,
         "endorsement_name": "TJ Oshie"
       }
+    },
+    "columns_carousel" :{
+      "type" : "columns-carousel",
+      "name" : "Columns Carousel"
     }
   },
   "order": [
@@ -230,6 +234,7 @@
     "icon_bar_XhA8jF",
     "featured_collections_example",
     "exclusie_icons_with_text_K6q6tD",
-    "hero_banner_NxhDbf"
+    "hero_banner_NxhDbf",
+    "columns_carousel"
   ]
 }
