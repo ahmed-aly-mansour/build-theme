@@ -41,25 +41,30 @@
         "block_1": {
           "type": "product_card",
           "settings": {
-            "product": "amazing-watch"
+            "product": "miracle-balm-palette-2025",
+            "hover_product_image": "shopify://shop_images/pdp_cheeky_4.webp"
           }
         },
         "block_2": {
           "type": "product_card",
           "settings": {
-            "product": "blue-silk-tuxedo"
+            "product": "everyday-sunscreen",
+            "hover_product_image": "shopify://shop_images/SPF_hover_pdp.webp"
           }
         },
         "product_card_bpd4Xd": {
           "type": "product_card",
           "settings": {
-            "product": "navy-sport-jacket"
+            "product": "miracle-balm",
+            "hover_product_image": "shopify://shop_images/MiracleBalm_PinkyBronze_4.webp",
+            "award_product_image": "shopify://shop_images/BestofBeauty_2022_1_1_150x_f5684d3c-b768-447c-9ff4-d242272fe643.avif"
           }
         },
         "product_card_tP6QmJ": {
           "type": "product_card",
           "settings": {
-            "product": "chequered-red-shirt"
+            "product": "just-enough-tinted-moisturizer",
+            "hover_product_image": "shopify://shop_images/JETM_alabaster_4.webp"
           }
         }
       },
@@ -226,6 +231,67 @@
         "show_endorsement": false,
         "endorsement_name": "TJ Oshie"
       }
+    },
+    "columns_carousel_qTf4PY": {
+      "type": "columns-carousel",
+      "blocks": {
+        "column_card_EmWWTr": {
+          "type": "column-card",
+          "settings": {
+            "card_image": "shopify://shop_images/PRODUCT-ROW-PDP-01_230x_bc18502e-7161-4296-aef1-3f445048d2d4.avif",
+            "card_title": "Better Beauty",
+            "card_description": "The world doesn't need more beauty products. It needs better beauty products.",
+            "learn_more_button": true,
+            "learn_more_button_link": "shopify://pages/about-us",
+            "learn_more_button_text": "Learn More"
+          }
+        },
+        "column_card_WcwbVh": {
+          "type": "column-card",
+          "settings": {
+            "card_image": "shopify://shop_images/PRODUCT-ROW-PDP-02_230x_f6c9aa73-d3c8-48be-b8d7-f986f72688ac.avif",
+            "card_title": "Clean Slate",
+            "card_description": "No phthalates, sulfates, petrolatum, PEGs, EDTA, or BPA. Because clean beauty is a no brainer.",
+            "learn_more_button": true,
+            "learn_more_button_link": "",
+            "learn_more_button_text": "Learn More"
+          }
+        },
+        "column_card_3HyqBx": {
+          "type": "column-card",
+          "settings": {
+            "card_image": "shopify://shop_images/value-props-1_230x_0c21f992-e54f-41ff-af15-f999ebbe203b.avif",
+            "card_title": "High Performance",
+            "card_description": "The makeup equivalent of a swiss army knife. Easy, cool, multi-purpose products.",
+            "learn_more_button": true,
+            "learn_more_button_link": "",
+            "learn_more_button_text": "Learn More"
+          }
+        },
+        "column_card_jtaVpt": {
+          "type": "column-card",
+          "settings": {
+            "card_image": "shopify://shop_images/PRODUCT-ROW-PDP-04_230x_a4f1a9a6-5273-4b2c-8ad3-133a053b666e.avif",
+            "card_title": "From Bobbi",
+            "card_description": "It began with the need to create formulas for her own kit.",
+            "learn_more_button": true,
+            "learn_more_button_link": "",
+            "learn_more_button_text": "Learn More"
+          }
+        }
+      },
+      "block_order": [
+        "column_card_EmWWTr",
+        "column_card_WcwbVh",
+        "column_card_3HyqBx",
+        "column_card_jtaVpt"
+      ],
+      "name": "Columns Carousel",
+      "settings": {
+        "heading": "",
+        "subheading": "",
+        "carousel_bg_color": ""
+      }
     }
   },
   "order": [
@@ -234,6 +300,7 @@
     "icon_bar_XhA8jF",
     "featured_collections_example",
     "exclusie_icons_with_text_K6q6tD",
-    "hero_banner_NxhDbf"
+    "hero_banner_NxhDbf",
+    "columns_carousel_qTf4PY"
   ]
 }
