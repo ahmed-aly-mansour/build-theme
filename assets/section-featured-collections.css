@@ -83,7 +83,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  padding: 1.5rem 1rem; /* Adjust padding as needed */
+  padding: 10px; /* Adjust padding as needed */
   color: #ffffff; /* White text */
   z-index: 2;
   text-align: right;
@@ -135,7 +135,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 10px 10px; /* Adjust padding as needed */
+  padding: 1.5rem 1rem; /* Adjust padding as needed */
   text-align: center;
   color: #ffffff; /* White text */
   z-index: 2;
