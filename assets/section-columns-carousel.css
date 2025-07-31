@@ -22,23 +22,16 @@ color: #000000; /* Make subheading black */
 font-style: italic; /* Make subheading italic */
 }
 
-.columns-carousel-content{
-    padding: 40px 16px;
+.columns-carousel-content.swiper{
+    padding: 80px 48px !important;
+}
+/* .columns-carousel-content.swiper{
+    padding: 40px 16px !important;
     width: 100%;
-}
+}  */
 
-@media (min-width: 700px){
-    .columns-carousel-content{
-        padding: 40px 24px;
-    }
-}
-
-@media (min-width: 1024px){
-    .columns-carousel-content{
-        padding: 80px 48px;
-    }
-}
-
+/* @media (min-width: 1024px){
+} */
 
 .columns-carousel-content-wrapper{
     display: flex;
@@ -140,15 +133,15 @@ font-style: italic; /* Make subheading italic */
 }
 
 .swiper-button-next{
-    top: unset;
-    bottom: 20px;
-    right: 25%;
+    top: unset !important;
+    bottom: 20px !important;
+    right: 25% !important;
 }
 
 .swiper-button-prev{
-    top: unset;
-    bottom: 20px;
-    left: 25%;
+    top: unset !important;
+    bottom: 20px !important;
+    left: 25% !important;
 }
 
 .swiper-button-next button, .swiper-button-prev button{
@@ -180,9 +173,7 @@ font-style: italic; /* Make subheading italic */
     content: none; /* Ensure no pseudo spacing exists */
 }
 
-.columns-carousel-content.swiper{
-    padding-bottom: 80px !important;
-}
+
 .swiper-pagination{
     bottom: 30px !important;
 }
