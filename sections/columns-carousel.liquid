@@ -30,7 +30,7 @@
         {%- endif -%}
     </div>
 
-    <div class="columns-carousel-content swiper" style="background-color: {{ section.settings.carousel_bg_color }}">
+    <div class="columns-carousel-content swiper" id="columns-carousel-{{ section.id }}" style="background-color: {{ section.settings.carousel_bg_color }}">
         <!-- Additional required wrapper -->
         <div class="columns-carousel-content-wrapper swiper-wrapper">
             <!-- Slides -->
@@ -71,8 +71,12 @@
         <div class="swiper-pagination"></div>
 
         <!-- If we need navigation buttons -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev">
+            <button><</button>
+        </div>
+        <div class="swiper-button-next">
+            <button>></button>
+        </div>
 
     </div>
 </columns-carousel>

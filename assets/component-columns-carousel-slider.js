@@ -33,17 +33,45 @@ class ColumnsCarousel extends HTMLElement {
         slidesPerView: 1,
         autoHeight: false,
         breakpoints: {
-          450: {
+          200: {
             slidesPerView: 2,
             loop: true,
+            watchOverflow: true
+          },
+          420: {
+            slidesPerView: 3,
+            loop: true,
+            watchOverflow: true
+          },
+          550: {
+            slidesPerView: 5,
+            loop: true,
+            watchOverflow: false
           },
           700: {
             slidesPerView: 4,
             loop: false,
+            watchOverflow: false,
+            navigation: false
           }
         },
-        loop: true,
-        watchOverflow: false,
+        loop: false,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: false,
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return `
+              <span class="${currentClass}" style="margin-right:2px;"></span>
+              <span style="margin: 0; padding: 0;">/</span>
+              <span class="${totalClass}" style="margin-left:2px;"></span>
+            `;
+          }
+        }
       });
     }
   }
@@ -70,5 +98,5 @@ class ColumnsCarousel extends HTMLElement {
 }
 
 if (!customElements.get('columns-carousel')) {
-  customElements.define('columns-carousel', FeaturedCollections);
+  customElements.define('columns-carousel', ColumnsCarousel);
 }

@@ -43,6 +43,7 @@ font-style: italic; /* Make subheading italic */
 .columns-carousel-content-wrapper{
     display: flex;
     justify-content: space-between;
+    /* gap: 48px; */
     width: 100%;
 }
 
@@ -50,9 +51,9 @@ font-style: italic; /* Make subheading italic */
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: calc(var(--base-width) - var(--margin-r-value));
-    gap: var(--margin-r-value);
-    min-height: 400px;
+    /* width: calc(var(--base-width) - var(--margin-r-value)); */
+    padding-right: var(--margin-r-value);
+    /* min-height: 400px; */
 }
 
 @media (min-width: 1024px) {
@@ -64,8 +65,8 @@ font-style: italic; /* Make subheading italic */
 
 @media (max-width: 700px){
     .carousel-block{
-        /* margin-right: 20px; */
-        gap: 20px;
+        padding-right: 20px;
+        /* gap: 20px; */
     }
 }
 
@@ -121,4 +122,73 @@ font-style: italic; /* Make subheading italic */
     .carousel-block-content__desc, .carousel-block-content__button{
         margin-top: 24px;
     }
+}
+
+
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+  display: block !important;
+}
+
+@media (min-width: 700px) {
+  .swiper-button-next,
+  .swiper-button-prev,
+  .swiper-pagination {
+    display: none !important;
+  }
+}
+
+.swiper-button-next{
+    top: unset;
+    bottom: 20px;
+    right: 25%;
+}
+
+.swiper-button-prev{
+    top: unset;
+    bottom: 20px;
+    left: 25%;
+}
+
+.swiper-button-next button, .swiper-button-prev button{
+    background: none;
+    border: none;
+    appearance: none;
+    padding: 17px;
+}
+
+.swiper-pagination{
+    font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.swiper-pagination-fraction {
+    font-family: monospace; /* Optional: makes spacing consistent */
+    letter-spacing: -3.5px;
+    white-space: nowrap;
+  }
+  
+  .swiper-pagination-fraction .swiper-pagination-current,
+  .swiper-pagination-fraction .swiper-pagination-total {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper-pagination-fraction {
+    /* Remove spacing around the slash */
+  }
+  
+  .swiper-pagination-fraction::after {
+    content: none; /* Ensure no pseudo spacing exists */
+  }
+
+
+.columns-carousel-content{
+    padding-bottom: 80px;
+}
+
+.swiper-pagination{
+    bottom: 30px !important;
 }
