@@ -116,7 +116,6 @@
   font-weight: bold;
   line-height: 1.2;
   color: var(--hero-text-color, #FFFFFF); /* Explicitly use variable */
-  background-color: #fff;
   /* width: 60%; */
 }
 
