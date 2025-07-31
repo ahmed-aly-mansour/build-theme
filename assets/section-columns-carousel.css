@@ -180,8 +180,8 @@ font-style: italic; /* Make subheading italic */
     content: none; /* Ensure no pseudo spacing exists */
 }
 
-.columns-carousel-content{
-    padding-bottom: 80px;
+.columns-carousel-content.swiper{
+    padding-bottom: 80px !important;
 }
 .swiper-pagination{
     bottom: 30px !important;
