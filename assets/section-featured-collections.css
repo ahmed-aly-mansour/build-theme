@@ -86,6 +86,7 @@
   padding: 1.5rem 1rem; /* Adjust padding as needed */
   color: #ffffff; /* White text */
   z-index: 2;
+  text-align: right;
   }
 
 .collection-card__info--btn-right a{
@@ -108,17 +109,33 @@
   transition: all .4s cubic-bezier(.39,.575,.565,1);
   text-decoration: none;
   color: black;
+  margin: 0;
 }
 .collection-card__info--btn-right a:hover{
   background: transparent;
   color: white;
 }
+
+.collection-card__info--btn-right h3{
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
+  font-size: 16px;
+  max-width: 80%;
+  margin-bottom: 16px;
+  max-width: 170px;
+  font-weight: 400;
+}
+@media (min-width: 700px) {
+  .collection-card__info--btn-right h3{
+      text-align: right;
+  }
+}
+
 .collection-card__info {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem 1rem; /* Adjust padding as needed */
+  padding: 10px 10px; /* Adjust padding as needed */
   text-align: center;
   color: #ffffff; /* White text */
   z-index: 2;

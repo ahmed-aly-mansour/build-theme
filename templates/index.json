@@ -141,7 +141,10 @@
           "settings": {
             "collection": "face",
             "custom_image": "shopify://shop_images/PDP_face_2_x1000_bf28d70c-2134-4549-97d7-967a83748702.webp",
-            "custom_title": ""
+            "custom_title1": "",
+            "custom_title2": "",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "SHOP FACE"
           }
         },
         "block_2": {
@@ -149,7 +152,10 @@
           "settings": {
             "collection": "skin-care",
             "custom_image": "shopify://shop_images/PDP_skin_4_1_x1000_c272ce81-216b-4c6a-8c3f-336628e0c814.webp",
-            "custom_title": ""
+            "custom_title1": "",
+            "custom_title2": "",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "SHOP SKIIN"
           }
         },
         "block_4": {
@@ -157,7 +163,10 @@
           "settings": {
             "collection": "eyes",
             "custom_image": "shopify://shop_images/PDP_eyes_3_1_x1000_0396d803-297a-456f-98c1-4b046a1aed54.webp",
-            "custom_title": ""
+            "custom_title1": "",
+            "custom_title2": "",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "SHOP EYES"
           }
         },
         "block_3": {
@@ -165,7 +174,10 @@
           "settings": {
             "collection": "lips",
             "custom_image": "shopify://shop_images/PDP_Lips_1_1_x1000_e873da94-df53-40e8-94ac-124b1643b6ff.webp",
-            "custom_title": ""
+            "custom_title1": "",
+            "custom_title2": "",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "SHOP LIPS"
           }
         }
       },
@@ -292,6 +304,70 @@
         "subheading": "",
         "carousel_bg_color": "#f8f8f8"
       }
+    },
+    "featured_collections_FApyDc": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_card_J9hijD": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/JonesRoad_Eyeshadow_SmokeyGrey_04_Olesia_GTL_x1000_8c8c4423-0efb-4c91-bd77-bcf0050133a2.webp",
+            "custom_title1": "Olesia’s Chic,",
+            "custom_title2": "Effortless Look",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "GET THE LOOK"
+          }
+        },
+        "collection_card_8dpdxq": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/Deja_x1000_9066d5de-110f-4421-babf-77b5f840d8dd.webp",
+            "custom_title1": "Deja's Simple",
+            "custom_title2": "Smokey Eye",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "GET THE LOOK"
+          }
+        },
+        "collection_card_7Gwewi": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/JonesRoad_GetTheLook_Mollye_GTL_x1000_bd5ed64c-98a6-4b29-9e1c-b7de2be2326b.webp",
+            "custom_title1": "Mollye's Monochromatic",
+            "custom_title2": "Look",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "GET THE LOOK"
+          }
+        },
+        "collection_card_NRNJQy": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "custom_image": "shopify://shop_images/justbobbi_AdelinaSoftFocusSparkle_x1000_c468e7da-9e03-453f-9dde-3b90e1bbb61b.webp",
+            "custom_title1": "Adelina’s Soft",
+            "custom_title2": "Sophistication",
+            "custom_title_color": "#ffffff",
+            "custom_button_text": "GET THE LOOK"
+          }
+        }
+      },
+      "block_order": [
+        "collection_card_J9hijD",
+        "collection_card_8dpdxq",
+        "collection_card_7Gwewi",
+        "collection_card_NRNJQy"
+      ],
+      "name": "Featured Collections",
+      "settings": {
+        "heading": "Get The Look",
+        "subheading": "",
+        "heading_alignment": "left",
+        "style": "style3",
+        "text_color": "#000000",
+        "hide_shop_now": false
+      }
     }
   },
   "order": [
@@ -301,6 +377,7 @@
     "featured_collections_example",
     "exclusie_icons_with_text_K6q6tD",
     "hero_banner_NxhDbf",
-    "columns_carousel_qTf4PY"
+    "columns_carousel_qTf4PY",
+    "featured_collections_FApyDc"
   ]
 }

@@ -34,9 +34,9 @@
       {%- for block in section.blocks -%}
         {%- assign collection = block.settings.collection -%}
         {%- assign custom_image = block.settings.custom_image -%}
-        {%- assign custom_title = block.settings.custom_title -%}
+        {%- assign custom_button_text = block.settings.custom_button_text -%}
         {%- assign collection_image = custom_image | default: collection.featured_image | default: collection.image -%}
-        {%- assign display_title = custom_title | default: collection.title -%}
+        {%- assign display_title = custom_button_text | default: collection.title -%}
 
         <div class="featured-collections__card grid__item swiper-slide" {{ block.shopify_attributes }}>
           {% unless style == 'style3' %}
@@ -76,9 +76,12 @@
               </div>
             {% elsif style == "style3" %}
               <div class="collection-card__info--btn-right">
+                {% if block.settings.custom_title1 or block.settings.custom_title2 %}
+                  <h3 class="collection-card__info__title" style="text-align: right; color: {{ block.settings.custom_title_color }};">{{block.settings.custom_title1}}<br>{{block.settings.custom_title2}}</h3>
+                {% endif %}
                 <a
                     href="{{ collection.url | default: '#' }}"
-                   class="collection-card__title">SHOP {{ display_title | default: 'Collection Title' }}</a>
+                   class="collection-card__title">{{ display_title | default: 'Collection Title' }}</a>
               </div>
                 
             {%- else -%}
@@ -181,10 +184,27 @@
         },
         {
           "type": "text",
-          "id": "custom_title",
-          "label": "Custom Title (optional)",
+          "id": "custom_title1",
+          "label": "Custom Title first line (optional)",
           "info": "Overrides the collection title if set."
-        }
+        },
+        {
+          "type": "text",
+          "id": "custom_title2",
+          "label": "Custom Title second line (optional)",
+          "info": "Overrides the collection title if set."
+        },
+        {
+          "type": "color",
+          "id": "custom_title_color",
+          "label": "Custom Title color (optional)",
+          "default": "#ffffff"
+        },
+        {
+          "type": "text",
+          "id": "custom_button_text",
+          "label": "Custom Button Text (optional)"
+         }
       ]
     }
   ],
