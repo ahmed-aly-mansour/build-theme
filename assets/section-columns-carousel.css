@@ -1,0 +1,123 @@
+.columns-carousel__header {
+    text-align: left; /* Align header text left */
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+
+.columns-carousel__heading {
+margin-bottom: .5rem;
+text-transform: uppercase;
+margin-top: 0;
+font-family: Proxima-Nova, GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+font-size: 16px;
+font-weight: 700;
+letter-spacing: -1.3px;
+}
+
+.columns-carousel__subheading {
+margin-top: 0;
+/* Inherits subtitle style */
+color: #000000; /* Make subheading black */
+font-style: italic; /* Make subheading italic */
+}
+
+.columns-carousel-content{
+    padding: 40px 16px;
+    width: 100%;
+}
+
+@media (min-width: 700px){
+    .columns-carousel-content{
+        padding: 40px 24px;
+    }
+}
+
+@media (min-width: 1024px){
+    .columns-carousel-content{
+        padding: 80px 48px;
+    }
+}
+
+
+.columns-carousel-content-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.carousel-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: calc(var(--base-width) - var(--margin-r-value));
+    gap: var(--margin-r-value);
+}
+
+@media (min-width: 1024px) {
+    .carousel-block-image-container {
+        box-sizing: border-box;
+        padding: 24px;
+    }
+}
+
+@media (max-width: 700px){
+    .carousel-block{
+        /* margin-right: 20px; */
+        gap: 20px;
+    }
+}
+
+.carousel-block-image-container {
+    width: 100%;
+    max-width: 175px;
+    max-height: 200px;
+    margin: 0 auto;
+    position: relative;
+    height: 0;
+    /* padding-top: 120%; */
+}
+
+.carousel-block-image-container img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.carousel-block-content__heading{
+    font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+    font-size: 14px;
+    letter-spacing: -0.31px;
+    text-transform: uppercase;
+}
+
+.carousel-block-content__desc{
+    line-height: 1.8;
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+.carousel-block-content__button{
+    display: inline-block;
+    font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
+    font-size: 14px;
+    letter-spacing: 1.26px;
+    margin-top: 16px;
+    /* padding-bottom: 2px; */
+    padding: 0;
+    border-bottom: 1px solid;
+    color: #000000;
+    text-decoration: none;
+}
+
+@media (min-width: 1024px){
+    .carousel-block-content__heading{
+        font-size: 16px;
+    }
+    .carousel-block-content__desc, .carousel-block-content__button{
+        margin-top: 24px;
+    }
+}

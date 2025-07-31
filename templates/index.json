@@ -253,7 +253,7 @@
             "card_title": "Clean Slate",
             "card_description": "No phthalates, sulfates, petrolatum, PEGs, EDTA, or BPA. Because clean beauty is a no brainer.",
             "learn_more_button": true,
-            "learn_more_button_link": "",
+            "learn_more_button_link": "shopify://pages/about-us",
             "learn_more_button_text": "Learn More"
           }
         },
@@ -264,7 +264,7 @@
             "card_title": "High Performance",
             "card_description": "The makeup equivalent of a swiss army knife. Easy, cool, multi-purpose products.",
             "learn_more_button": true,
-            "learn_more_button_link": "",
+            "learn_more_button_link": "shopify://pages/about-us",
             "learn_more_button_text": "Learn More"
           }
         },
@@ -275,7 +275,7 @@
             "card_title": "From Bobbi",
             "card_description": "It began with the need to create formulas for her own kit.",
             "learn_more_button": true,
-            "learn_more_button_link": "",
+            "learn_more_button_link": "shopify://pages/about-us",
             "learn_more_button_text": "Learn More"
           }
         }
@@ -290,7 +290,7 @@
       "settings": {
         "heading": "",
         "subheading": "",
-        "carousel_bg_color": ""
+        "carousel_bg_color": "#f8f8f8"
       }
     }
   },
