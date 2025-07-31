@@ -2,11 +2,16 @@
 .exclusie-icons-section {
   width: 100%;
   background: #fafafa;
-  padding: 70px;
+  padding: 72px;
   /* margin-bottom: 5rem; */
   background-color: #f5f2ec;
 }
 
+@media (max-width: 700px) {
+  .exclusie-icons-section{
+    padding: 48px 36px;
+  }
+}
 
 .exclusie-icons-list {
   display: flex;
@@ -107,7 +112,7 @@
     align-self: center;
   }
   .exclusie-icon-item {
-    padding: 18px 0;
+    /* padding: 18px 0; */
     border-radius: 0;
     border: none;
   }
@@ -118,6 +123,6 @@
 @media screen and (max-width: 768px) {
   .exclusie-icons-section {
     background: #ffffff;
-    padding: 20px 0;
+    /* padding: 20px 0; */
   }
 }
