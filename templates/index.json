@@ -135,6 +135,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "face",
+            "custom_image": "shopify://shop_images/PDP_face_2_x1000_bf28d70c-2134-4549-97d7-967a83748702.webp",
             "custom_title": ""
           }
         },
@@ -142,6 +143,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "skin-care",
+            "custom_image": "shopify://shop_images/PDP_skin_4_1_x1000_c272ce81-216b-4c6a-8c3f-336628e0c814.webp",
             "custom_title": ""
           }
         },
@@ -149,6 +151,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "eyes",
+            "custom_image": "shopify://shop_images/PDP_eyes_3_1_x1000_0396d803-297a-456f-98c1-4b046a1aed54.webp",
             "custom_title": ""
           }
         },
@@ -156,6 +159,7 @@
           "type": "collection_card",
           "settings": {
             "collection": "lips",
+            "custom_image": "shopify://shop_images/PDP_Lips_1_1_x1000_e873da94-df53-40e8-94ac-124b1643b6ff.webp",
             "custom_title": ""
           }
         }
