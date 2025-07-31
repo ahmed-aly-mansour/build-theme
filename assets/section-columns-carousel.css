@@ -49,9 +49,10 @@ font-style: italic; /* Make subheading italic */
 .carousel-block{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     width: calc(var(--base-width) - var(--margin-r-value));
     gap: var(--margin-r-value);
+    min-height: 400px;
 }
 
 @media (min-width: 1024px) {
@@ -71,7 +72,7 @@ font-style: italic; /* Make subheading italic */
 .carousel-block-image-container {
     width: 100%;
     max-width: 175px;
-    max-height: 200px;
+    height: 200px;
     margin: 0 auto;
     position: relative;
     height: 0;
