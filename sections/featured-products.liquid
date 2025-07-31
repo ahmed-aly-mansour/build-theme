@@ -89,8 +89,8 @@
                         height="317"
                         class="product-card__image prod-main-image"
                       >
-                      {% if product.images.size > 1 %}
-                        {%- assign image = product.images[1] -%}
+                      {% if block.settings.hover_product_image %}
+                        {%- assign image = block.settings.hover_product_image  -%}
                         <img
                           srcset="
                             {%- if image.width >= 350 -%}{{ image | image_url: width: 350 }} 350w,{%- endif -%}
@@ -113,11 +113,18 @@
                       {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
                     {%- endif -%}
 
-                    {%- if product.tags contains "new" -%}
+                    {%- if product.tags contains "flag_New" -%}
                       <span class="product-card__badge">NEW</span>
-                    {% elsif product.tags contains "bestseller" %}
+                    {% elsif product.tags contains "flag_Bestseller" %}
                       <span class="product-card__badge">BESTELLER</span>
                     {%- endif -%}
+
+                    {% if block.settings.award_product_image %}
+                      <div  class="product__card-award"
+                            style="background-image: url('{{ block.settings.award_product_image | image_url }}')">
+                      </div>
+                    {% endif %}
+                    
                   </div>
 
                   <div class="product-card__info product-card__info--{{ product_content_alignment }}">
@@ -301,6 +308,17 @@
           "type": "product",
           "id": "product",
           "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_product_image",
+          "label": "Second Image",
+          "info" : "applied when hovering on the product image"
+        },
+        {
+          "type": "image_picker",
+          "id": "award_product_image",
+          "label": "Award Image Tag"
         }
       ]
     }
