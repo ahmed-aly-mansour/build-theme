@@ -417,6 +417,7 @@ h2.cart__empty-text {
 @media (max-width: 768px) {
   .drawer__wrapper{
     width: min(328px, 100%);
+    z-index: 20;
   }
   .cart-item__heading a{
     font-size: 1.4rem;

@@ -35,6 +35,7 @@ class FeaturedCollections extends HTMLElement {
         breakpoints: {
           450: {
             slidesPerView: 2,
+            centeredSlides: true,
             loop: true,
           },
           700: {

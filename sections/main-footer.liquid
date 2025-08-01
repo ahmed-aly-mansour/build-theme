@@ -146,9 +146,9 @@
       data-cascade
     {% endif %}
   >
+    {%- comment -%}
     <div class="footer__content-bottom-wrapper">
       <div class="footer__column footer__localization isolate">
-        {%- comment -%}
           {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
             <localization-form>
               {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
@@ -172,15 +172,14 @@
               {%- endform -%}
             </localization-form>
           {%- endif -%}
-        {%- endcomment -%}
-
-        {%- render 'component-localization-form',
-          enable_country_selector: section.settings.enable_country_selector,
-          enable_language_selector: section.settings.enable_language_selector
-        -%}
-      </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
+          
+          {%- render 'component-localization-form',
+            enable_country_selector: section.settings.enable_country_selector,
+            enable_language_selector: section.settings.enable_language_selector
+            -%}
+          </div>
+          <div class="footer__column footer__column--info">
+            {%- if section.settings.payment_enable -%}
           <div class="footer__payment">
             <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
             <ul class="list list-payment" role="list">
@@ -195,6 +194,7 @@
         {%- endif -%}
       </div>
     </div>
+    {%- endcomment -%}
     <div class="footer__content-bottom-wrapper {% if section.settings.enable_country_selector == false and section.settings.enable_language_selector == false %} footer__content-bottom-wrapper--center{% endif %}">
       <div class="footer__disclaimer">
         <small>Bobbi Brown left her namesake company in 2016 and is no longer affiliated or associated with the Bobbi Brown Cosmetics company or the Bobbi Brown branded products</small>

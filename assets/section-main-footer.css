@@ -20,6 +20,7 @@
   .footer__content-top.page-width {
     max-width: 95%;
     padding: 40px 10px;
+    padding-bottom: 0;
   }
   .footer-block.grid__item:nth-child(2), .footer-block.grid__item:nth-child(3) {
     max-width: 44%;

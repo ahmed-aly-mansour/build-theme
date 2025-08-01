@@ -34,17 +34,8 @@ class ColumnsCarousel extends HTMLElement {
         autoHeight: false,
         breakpoints: {
           200: {
-            slidesPerView: 2,
-            loop: true,
-            watchOverflow: true
-          },
-          420: {
-            slidesPerView: 3,
-            loop: true,
-            watchOverflow: true
-          },
-          550: {
-            slidesPerView: 5,
+            slidesPerView: 1,
+            centeredSlides: true,
             loop: true,
             watchOverflow: false
           },
