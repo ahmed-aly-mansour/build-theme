@@ -99,18 +99,19 @@
   font-family: BaseMonoWideWeb,Courier,Courier New,sans-serif;
   font-size: 39px;
   margin-bottom: 5px;
-  font-weight: bold;
+  /* font-weight: bold; */
   line-height: 1.5;
   color: var(--hero-text-color, #FFFFFF); /* Explicitly use variable */
   /* width: 60%; */
 }
 
 .hero-banner-section .hero-banner__subheading {
+  font-family: RingsideWideWeb, Helvetica, Arial, sans-serif;
   font-size: 18px;
   line-height: 2;
   margin-bottom: 20px;
   max-width: 600px;
-  /* width: 85%; */
+  width: 85%;
   margin: 16px 0;
 }
 

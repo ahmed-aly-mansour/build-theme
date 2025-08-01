@@ -60,11 +60,9 @@
             :class="idx === {{ forloop.index0 }} ? 'slide-up' : ''"
           >
             {% if block.settings.link_text and block.settings.link_url %}
-              <a href="{{ block.settings.link_url }}" class="announcement-bar__link">
-                {{ block.settings.link_text }}
-              </a>
+              <a href="{{ block.settings.link_url }}" class="announcement-bar__link">{{ block.settings.link_text }}</a>
             {% endif %}
-            <span>{{ block.settings.text }}</span>
+            <span>&nbsp;{{ block.settings.text }}</span>
             {{ block.settings.emoji }}
           </div>
         {% endfor %}
@@ -114,8 +112,9 @@
   }
   .announcement-bar__message {
     margin: 0;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: BaseMonoWideWeb,Courier,Courier New,sans-serif;
+    font-size: 13px;
+    {% comment %} font-weight: 500; {% endcomment %}
     line-height: 1.2;
     white-space: normal;
     display: flex;
