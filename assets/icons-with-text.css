@@ -45,9 +45,10 @@
   font-weight: 500;
   margin-bottom: 0px;
   margin-top: 0;
-  letter-spacing: 1.26;
+  letter-spacing: 4.26px;
   max-width: 1000px;
   margin: 0 auto;
+  word-spacing: 9px;
 }
 
 .exclusie-icon-subtitle {
@@ -57,6 +58,7 @@
   /* margin: 0; */
   margin-top: 22px;
   text-transform: uppercase;
+  word-spacing: 8px;
 }
 
 .exclusie-icon-divider {

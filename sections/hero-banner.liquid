@@ -39,13 +39,25 @@
     --hero-button-color: {{ button_color }};
     --hero-button-text-color: {{ button_text_color }};
     /* Add more variables here if needed for other settings */
+    --ratio-mobile: 0.7262411347517731;
+    {% if section.settings.hero_banner_size == 'large' %}
+      --ratio-desktop: 2.32;
+    {% elsif section.settings.hero_banner_size == 'small' %}
+      --ratio-desktop: 3.32;
+    {% endif %}
+  }
+
+  #{{ section_id }}{
+    aspect-ratio: var(--ratio-mobile);
+  }
+  
+  @media (min-width: 768px) {
+    #{{ section_id }}{
+      aspect-ratio: var(--ratio-desktop);
+    }
   }
 </style>
-<div id="{{ section_id }}" class="hero-banner hero-banner-section" 
-  {% if section.settings.hero_banner_size == 'small'%}
-    style="height: 462px"
-  {% endif %}
->
+<div id="{{ section_id }}" class="hero-banner hero-banner-section" >
   <div class="hero-banner__background">
     {% if background_type == 'video' %}
       {% if video_background_hosted != blank %}

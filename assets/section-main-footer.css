@@ -351,7 +351,7 @@ footer__content-bottom-wrapper
   .footer-block__details-content > p,
   .footer-block__details-content > li {
     padding: 0;
-    line-height: 20px;
+    line-height: 24px;
   }
 
   .footer-block:only-child li {
@@ -368,10 +368,10 @@ footer__content-bottom-wrapper
   color: rgba(var(--color-foreground), 0.75);
 }
 
-.footer-block__details-content .list-menu__item--active {
+/* .footer-block__details-content .list-menu__item--active {
   transition: text-decoration-thickness var(--duration-short) ease;
   color: rgb(var(--color-foreground));
-}
+} */
 
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link:hover,
@@ -426,7 +426,7 @@ footer__content-bottom-wrapper
 } */
 
 .list-social__item{
-  line-height: 20px;
+  line-height: 24px;
 }
 
 li.list-social__item a{
@@ -708,7 +708,8 @@ li.list-social__item a{
   align-items: center;
   display: flex;
   /* padding: 1.1rem; */
-  color: rgb(var(--color-foreground));
+  /* color: rgb(var(--color-foreground)); */
+  color: rgba(var(--color-foreground), .75);
 }
 
 .utility-bar .list-social__link {
@@ -949,7 +950,7 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
   padding: 0 16px;
   border: none;
   border-bottom: 1px solid black;
-
+  box-sizing: border-box;
 }
 .email-signup-container .email-signup-input p{
   font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
@@ -964,7 +965,7 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
   font-size: 16px;
   color: #fff;
   height: 48px;
-  padding: 0 16px;
+  padding: 0;
   width: 90px;
   flex-shrink: 0;
   background: #414141;
@@ -985,13 +986,16 @@ ul.footer-block__details-content a.link.link--text.list-menu__item.list-menu__it
   .footer__blocks-wrapper > div:first-child {
     max-width: 428px;
     width: 40%;
+    padding: 18px 19px 0;
+    margin-right: 19px;
+    box-sizing: content-box;
   }
   .footer__blocks-wrapper .footer-block {
     width: 20%;
     padding: 0 19px;
   }
   .footer__disclaimer{
-    width: 40%;
+    width: 30%;
   }
   .policies {
     gap: 20px;

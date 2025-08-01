@@ -24,6 +24,7 @@ font-style: italic; /* Make subheading italic */
 
 .columns-carousel-content.swiper{
     padding: 80px 48px !important;
+    padding-top: 0 !important;
 }
 /* .columns-carousel-content.swiper{
     padding: 40px 16px !important;
@@ -66,11 +67,13 @@ font-style: italic; /* Make subheading italic */
 .carousel-block-image-container {
     width: 100%;
     max-width: 175px;
-    height: 200px;
+    height: 225px;
     margin: 0 auto;
     position: relative;
-    height: 0;
+    /* height: 0; */
     /* padding-top: 120%; */
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
 
 .carousel-block-image-container img{

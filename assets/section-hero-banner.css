@@ -1,9 +1,4 @@
 /* Assets/section-hero-banner.css */
-.section-hero-banner {
-  --ratio-mobile: 0.7262411347517731;
-  --ratio-desktop: 2.32;
-}
-
 .hero-banner-section {
   position: relative;
   color: var(--hero-text-color, #FFFFFF); /* Use variable, provide fallback */
@@ -12,15 +7,6 @@
   background-color: #000;
   overflow: hidden;
   height: 100%;
-}
-.section-hero-banner{
-  aspect-ratio: var(--ratio-mobile);
-}
-
-@media (min-width: 768px) {
-  .section-hero-banner{
-    aspect-ratio: var(--ratio-desktop);
-  }
 }
 
 .hero-banner-section .hero-banner__background {

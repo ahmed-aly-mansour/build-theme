@@ -41,7 +41,7 @@
                 {% assign show_learn_more = block.settings.learn_more_button %}
 
                 <div class="carousel-block swiper-slide">
-                    <div class="carousel-block-image-container" style="padding-top: {{ carousels_to_show | times: 30 }}%">
+                    <div class="carousel-block-image-container">
                         <img 
                             src="{{ card_image | image_url: width: 500 }}" 
                             alt="{{ card_image.alt | escape}}"
