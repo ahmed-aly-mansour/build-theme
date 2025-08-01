@@ -40,25 +40,26 @@
 }
 
 .exclusie-icon-title {
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
   font-size: 28px;
   line-height: 32px;
   font-weight: 500;
   margin-bottom: 0px;
   margin-top: 0;
-  letter-spacing: 4.26px;
+  letter-spacing: 1.26px;
   max-width: 1000px;
   margin: 0 auto;
   word-spacing: 9px;
 }
 
 .exclusie-icon-subtitle {
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
   font-size: 16px;
   letter-spacing: 1.61px;
   color: #222;
   /* margin: 0; */
   margin-top: 22px;
   text-transform: uppercase;
-  word-spacing: 8px;
 }
 
 .exclusie-icon-divider {

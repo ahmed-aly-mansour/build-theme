@@ -17,12 +17,12 @@
 
 .featured-collections__heading {
   margin-bottom: .5rem;
-  text-transform: uppercase;
   margin-top: 0;
-  font-family: Proxima-Nova, GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
-  font-size: 16px;
+  font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: -1.3px;
+  letter-spacing: 1.61px;
+  text-transform: uppercase;
 }
 
 .featured-collections__subheading {

@@ -40,13 +40,13 @@
 
 .featured-products__heading {
   margin-bottom: 0.5rem; /* Adjust spacing */
-  text-transform: uppercase;
   margin-top: 0;
   /* Assuming H2 style from base.css is sufficient */
-  font-family: 'Proxima-Nova',GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: -1.3px;
+  font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1.61px;
+  text-transform: uppercase;
 }
 
 .featured-products__subheading {
@@ -163,11 +163,10 @@
   right: 16px;
   color: #f50a99;
   text-transform: uppercase;
-  font-family: 'Proxima-Nova'BaseMonoWideWeb, Courier, Courier New, sans-serif;
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
   font-weight: 700;
   font-size: 10px;
   z-index: 2;
-  /* line-height: 0.01em; */
 }
 
 @media screen and (min-width: 1024px) {
@@ -226,19 +225,20 @@
   color: #262626;
   /* Assume H3 style from base.css or adjust */
   font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: -1.3px;
+  letter-spacing: 0.025em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .product-card__title{
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 
 .product-card__reviews {
+  font-family: RingsideWideWeb, Helvetica, Arial, sans-serif;
   font-size: 1.5rem; /* Doubled font size */
   margin-bottom: 0.25rem; /* Reduced margin-bottom */
   display: flex;
