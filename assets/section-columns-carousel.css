@@ -9,7 +9,7 @@
 margin-bottom: .5rem;
 text-transform: uppercase;
 margin-top: 0;
-font-family: Proxima-Nova, GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
 font-size: 16px;
 font-weight: 700;
 letter-spacing: -1.3px;
@@ -88,11 +88,12 @@ font-style: italic; /* Make subheading italic */
 .carousel-block-content__heading{
     font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
     font-size: 14px;
-    letter-spacing: -0.31px;
+    letter-spacing: 1.61px;
     text-transform: uppercase;
 }
 
 .carousel-block-content__desc{
+    font-family: RingsideWideWeb, Helvetica, Arial, sans-serif;
     line-height: 1.8;
     margin-top: 16px;
     font-size: 13px;
@@ -113,7 +114,7 @@ font-style: italic; /* Make subheading italic */
 
 @media (min-width: 1024px){
     .carousel-block-content__heading{
-        font-size: 16px;
+        font-size: 18px;
     }
     .carousel-block-content__desc, .carousel-block-content__button{
         margin-top: 24px;
