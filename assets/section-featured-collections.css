@@ -37,6 +37,7 @@
   padding: 0; /* Remove default grid padding if any */
   /* Uses base.css flexbox grid */
   overflow-x: hidden;
+  height: 530px;
 }
 
 .featured-collections__card.grid__item {
@@ -57,6 +58,10 @@
 .collection-card__image-wrapper {
   height: 100%;
   width: 100%;
+}
+
+.featured-collections__card .media{
+  height: 100%;
 }
 
 /* Override base.css padding for taller portrait images */
