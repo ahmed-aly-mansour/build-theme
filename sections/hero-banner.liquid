@@ -41,7 +41,11 @@
     /* Add more variables here if needed for other settings */
   }
 </style>
-<div id="{{ section_id }}" class="hero-banner hero-banner-section">
+<div id="{{ section_id }}" class="hero-banner hero-banner-section" 
+  {% if section.settings.hero_banner_size == 'small'%}
+    style="height: 462px"
+  {% endif %}
+>
   <div class="hero-banner__background">
     {% if background_type == 'video' %}
       {% if video_background_hosted != blank %}
@@ -188,6 +192,16 @@
     {
       "type": "header",
       "content": "Background Settings"
+    },
+    {
+      "type": "select",
+      "id": "hero_banner_size",
+      "label": "Banner Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "large"
     },
     {
       "type": "radio",

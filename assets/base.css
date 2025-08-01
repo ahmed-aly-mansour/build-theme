@@ -8,6 +8,15 @@
   --focused-base-box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
+/* CSS Used fontfaces */
+@font-face{font-family:RingsideWideWeb;src:url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/ringside-wide-book.static.woff2) format("woff2"),url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/ringside-wide-book.static.woff) format("woff");}
+
+@font-face{font-family:RingsideWideWeb;font-style:italic;src:url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/ringside-wide-book-italic.static.woff2) format("woff2"),url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/ringside-wide-book-italic.static.woff) format("woff");}
+
+@font-face{font-family:BaseMonoWideWeb;src:url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/base-mono-wide-thin.static.woff2) format("woff2"),url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/base-mono-wide-thin.static.woff) format("woff");}
+
+@font-face{font-family:GeogrotesqueCondBoldWeb;src:url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/geogrotesque-cond-bold.static.woff2) format("woff2"),url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/geogrotesque-cond-bold.static.woff) format("woff");}
+
 section {
   width: 100%;
 }

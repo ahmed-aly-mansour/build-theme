@@ -114,7 +114,7 @@
   font-size: 39px;
   margin-bottom: 5px;
   font-weight: bold;
-  line-height: 1.2;
+  line-height: 1.5;
   color: var(--hero-text-color, #FFFFFF); /* Explicitly use variable */
   /* width: 60%; */
 }
