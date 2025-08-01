@@ -234,11 +234,15 @@
 
   /* CSS Used fontfaces */
   @font-face{
-    font-family:RingsideWideWeb;
-    src: url({{ 'ringside-wide-book.static.woff2' | asset_url }}) format("woff2"),
+    font-family: RingsideWideWeb;
+    src: url({{ 'ringside-wide-book.static.woff2' | asset_url }}) format("woff2")
   }
 
-  @font-face{font-family:RingsideWideWeb;font-style:italic;src:url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/ringside-wide-book-italic.static.woff2) format("woff2"),url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/ringside-wide-book-italic.static.woff) format("woff");}
+  @font-face{
+    font-family: RingsideWideWebItalic;
+    font-style: italic;
+    src: url({{ 'ringside-wide-book-italic.static.woff2' | asset_url }}) format("woff2")
+  }
 
   @font-face{font-family:BaseMonoWideWeb;src:url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/base-mono-wide-thin.static.woff2) format("woff2"),url(https://www.jonesroadbeauty.com/cdn/shop/t/290/assets/base-mono-wide-thin.static.woff) format("woff");}
 
