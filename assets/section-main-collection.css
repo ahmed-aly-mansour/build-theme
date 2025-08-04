@@ -122,10 +122,10 @@ body.collection .shopify-section.section .page-width {
   margin: 0;
   padding-left: 0;
   padding-right: 17px;
-  cursor: pointer;
   color: rgba(var(--color-foreground),.75);
   max-width: 225px;
   font-weight: 600; */
+  cursor: pointer;
   width: 100%;
   height: 100%;
   border: none;
@@ -155,6 +155,7 @@ body.collection .shopify-section.section .page-width {
   transform: translateY(-50%);
   padding: 0 16px;
   width: 50px;
+  cursor: pointer;
 }
 
 .facet-filters__sort:focus {
