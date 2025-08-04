@@ -22,18 +22,6 @@
     position: relative;
   }
 
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
   @media screen and (max-width: 990px) {
     .product-grid {
       grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
@@ -63,6 +51,10 @@
         {{ section.settings.button_border_color | color_modify: 'alpha', 0.8 }},
       0 0 0 var(--buttons-border-width) rgba(var(--color-button), var(--alpha-button-background));
   }
+
+  #shopify-section-{{ section.id }} .page-width{
+    max-width: unset;
+  }
 {%- endstyle -%}
 
 {% comment %} COMPONENT STYLES {% endcomment %}
@@ -78,12 +70,117 @@
 {%- endif -%}
 
 
-<div class="color-{{ section.settings.color_scheme }} page-width">
+<div class="color-{{ section.settings.color_scheme }}">
   <div class="collection-hero color-{{ section.settings.color_scheme }}">
-    <div class="collection-hero__text-wrapper">
-      <h1 class="collection-hero__title">{{ collection.title }}</h1>
+    <div class="collection-header">
+      <div class="collection-hero__text-wrapper">
+        <h1 class="collection-hero__title">{{ collection.title }}</h1>
+        <span>|</span>
+      <div class="item-counts-wrapper">
+        <div id="results-count-{{ section.id }}" class="results-count">
+          {%- if collection.products_count == collection.all_products_count -%}
+            {{ collection.products_count }} ITEMS
+          {% else %}
+            {{ collection.products_count }} of {{ collection.all_products_count }}
+          {% endif %}
+        </div>
+        <div id="loading-spinner-{{ section.id }}" class="loading-overlay__spinner"></div>
+      </div>
+    </div>
+    
+    <div class="sorting-wrapper">
+      {%- if section.settings.enable_filtering and section.settings.filter_type == 'vertical' -%}
+        <div class="mobile-filters-drawer medium-hide large-up-hide">
+          {%- render 'component-filters-drawer',
+            results: collection,
+            enable_sorting: section.settings.enable_sorting,
+            enable_filtering: section.settings.enable_filtering
+          -%}
+        </div>
+      {%- endif -%}
+      {%- if section.settings.enable_filtering and section.settings.filter_type == 'horizontal' -%}
+        <div class="horizontal-filters__parent-wrapper">
+          {% render 'component-filters-horizontal', results: collection %}
+          <div class="mobile-horizontal-filter medium-hide large-up-hide">
+            {%- render 'component-filters-drawer',
+              results: collection,
+              enable_sorting: section.settings.enable_sorting,
+              enable_filtering: section.settings.enable_filtering
+            -%}
+          </div>
+        </div>
+      {% elsif section.settings.enable_filtering and section.settings.filter_type == 'drawer' %}
+        <div class="horizontal-filters__parent-wrapper">
+          {% render 'component-filters-drawer',
+            results: collection,
+            enable_sorting: section.settings.enable_sorting,
+            enable_filtering: section.settings.enable_filtering
+          %}
+        </div>
+      {% endif %}
+      <div class="child-sorting-wrapper">
+        {%- if section.settings.enable_sorting -%}
+          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+          <div id="sort-by-{{ section.id }}" class="facet-filters__field small-hide">
+            <h2 class="facet-filters__label">
+              <label for="SortBy">Sort by:</label>
+            </h2>
+            
+            <div class="sort-by-container">
+                <select
+                data-render-section="filters-form"
+                name="sort_by"
+                {% if section.settings.filter_type == 'drawer' %}
+                  form="filters-form-drawer"
+                {% elsif section.settings.filter_type == 'horizontal' or section.settings.filter_type == 'vertical' %}
+                  form="filters-form"
+                {% endif %}
+                id="SortBy"
+                class="facet-filters__sort"
+              >
+                {%- for option in collection.sort_options -%}
+                  <option
+                    value="{{ option.value | escape }}"
+                    {% if option.value == sort_by %}
+                      selected="selected"
+                    {% endif %}
+                  >
+                    {{ option.name | escape }}
+                  </option>
+                {%- endfor -%}
+              </select>
+
+              <span class="sort-by-icon">
+                {{ 'icon-chevron-down.svg' | inline_asset_content }}
+              </span>
+          </div>
+          </div>
+        {%- endif -%}
+       
+      </div>
     </div>
   </div>
+    
+  
+  <div class="collection-header-menu">
+    <ul>
+      {% for block in section.blocks %}
+        {% if block.settings.collection %}
+          <li 
+            {% if request.path contains block.settings.collection.handle %}
+              class="is-active"
+            {% endif %}
+          >
+            <a href="{{ block.settings.collection.url }}">
+              {{ block.settings.collection.title }}
+            </a>
+          </li>          
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+  
   <div class="collection-info-wrapper section-{{ section.id }}-padding">
     <collection-info
       data-section="{{ section.id }}"
@@ -96,80 +193,7 @@
                 {% render 'component-filters-sidebar', results: collection, collapse_filters: section.settings.collapse_filters %}
               {% endif %}
               <div class="product-grid-container">
-                <div class="sorting-wrapper">
-                  {%- if section.settings.enable_filtering and section.settings.filter_type == 'vertical' -%}
-                    <div class="mobile-filters-drawer medium-hide large-up-hide">
-                      {%- render 'component-filters-drawer',
-                        results: collection,
-                        enable_sorting: section.settings.enable_sorting,
-                        enable_filtering: section.settings.enable_filtering
-                      -%}
-                    </div>
-                  {%- endif -%}
-                  {%- if section.settings.enable_filtering and section.settings.filter_type == 'horizontal' -%}
-                    <div class="horizontal-filters__parent-wrapper">
-                      {% render 'component-filters-horizontal', results: collection %}
-                      <div class="mobile-horizontal-filter medium-hide large-up-hide">
-                        {%- render 'component-filters-drawer',
-                          results: collection,
-                          enable_sorting: section.settings.enable_sorting,
-                          enable_filtering: section.settings.enable_filtering
-                        -%}
-                      </div>
-                    </div>
-                  {% elsif section.settings.enable_filtering and section.settings.filter_type == 'drawer' %}
-                    <div class="horizontal-filters__parent-wrapper">
-                      {% render 'component-filters-drawer',
-                        results: collection,
-                        enable_sorting: section.settings.enable_sorting,
-                        enable_filtering: section.settings.enable_filtering
-                      %}
-                    </div>
-                  {% endif %}
-                  <div class="child-sorting-wrapper">
-                    {%- if section.settings.enable_sorting -%}
-                      {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                      <div id="sort-by-{{ section.id }}" class="facet-filters__field small-hide">
-                        <h2 class="facet-filters__label">
-                          <label for="SortBy">Sort by:</label>
-                        </h2>
-                        <select
-                          data-render-section="filters-form"
-                          name="sort_by"
-                          {% if section.settings.filter_type == 'drawer' %}
-                            form="filters-form-drawer"
-                          {% elsif section.settings.filter_type == 'horizontal' or section.settings.filter_type == 'vertical' %}
-                            form="filters-form"
-                          {% endif %}
-                          id="SortBy"
-                          class="facet-filters__sort"
-                        >
-                          {%- for option in collection.sort_options -%}
-                            <option
-                              value="{{ option.value | escape }}"
-                              {% if option.value == sort_by %}
-                                selected="selected"
-                              {% endif %}
-                            >
-                              {{ option.name | escape }}
-                            </option>
-                          {%- endfor -%}
-                        </select>
-                      </div>
-                    {%- endif -%}
-                    <div class="item-counts-wrapper">
-                      <div id="results-count-{{ section.id }}" class="results-count">
-                        {%- if collection.products_count == collection.all_products_count -%}
-                          {{ collection.products_count }} products
-                        {% else %}
-                          {{ collection.products_count }} of {{ collection.all_products_count }}
-                        {% endif %}
-                      </div>
-                      <div id="loading-spinner-{{ section.id }}" class="loading-overlay__spinner"></div>
-                    </div>
-                  </div>
-                </div>
-
+                
                 <div id="active-filter-group-{{ section.id }}" class="active-filter-group__item-wrapper">
                   {% liquid
                     assign has_active_filters = false
@@ -487,6 +511,32 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_item",
+      "name": "Collection Menu Item",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections Menu",
+      "blocks": [
+        { "type": "collection_item" },
+        { "type": "collection_item" },
+        { "type": "collection_item" },
+        { "type": "collection_item" },
+        { "type": "collection_item" },
+        { "type": "collection_item" }
+      ]
     }
   ]
 }
