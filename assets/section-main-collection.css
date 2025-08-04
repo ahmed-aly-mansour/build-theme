@@ -9,9 +9,12 @@ body.collection .shopify-section.section .page-width {
   padding: 24px 16px;
   gap: 22px;
 }
+.collection-header-menu{
+  padding: 24px 16px;
+}
 
 @media (min-width: 768px){
-  .collection-header{
+  .collection-header, .collection-header-menu{
     padding: 26px;
   }
 }

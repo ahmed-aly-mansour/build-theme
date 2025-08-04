@@ -283,7 +283,7 @@
   </div>
 </div> {% endcomment %}
 
-<div class="color-{{ section.settings.color_scheme }} page-width">
+<div class="color-{{ section.settings.color_scheme }}">
   <div class="collection-info-wrapper section-{{ section.id }}-padding">
     <collection-info
       data-section="{{ section.id }}"
@@ -343,8 +343,9 @@
                       </div>
                       <div id="loading-spinner-{{ section.id }}" class="loading-overlay__spinner"></div>
                     </div>
-
                   </div>
+
+                  
 
                   <div class="child-sorting-wrapper">
                     {%- if section.settings.enable_sorting -%}
@@ -379,6 +380,24 @@
                     {%- endif -%}
                     
                   </div>
+                </div>
+
+                <div class="collection-header-menu">
+                  <ul>
+                    {% for block in section.blocks %}
+                      {% if block.settings.collection %}
+                        <li 
+                          {% if request.path contains block.settings.collection.handle %}
+                            class="is-active"
+                          {% endif %}
+                        >
+                          <a href="{{ block.settings.collection.url }}">
+                            {{ block.settings.collection.title }}
+                          </a>
+                        </li>          
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
                 </div>
 
                 <div id="active-filter-group-{{ section.id }}" class="active-filter-group__item-wrapper">
