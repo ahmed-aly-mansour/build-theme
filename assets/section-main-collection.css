@@ -4,15 +4,14 @@ body.collection .shopify-section.section .page-width {
   padding: 0px 20px;
 }
 
-.collection-hero{
+.collection-header{
   display: flex;
-  flex-direction: column;
   padding: 24px 16px;
   gap: 22px;
 }
 
 @media (min-width: 768px){
-  .collection-hero{
+  .collection-header{
     padding: 26px;
   }
 }
@@ -29,7 +28,9 @@ body.collection .shopify-section.section .page-width {
   color: black;
   letter-spacing: 0.025em;
 }
-
+.collection-hero__title{
+  word-break: unset;
+}
 .collection-hero__text-wrapper, .collection-hero__title{
   font-family: RingsideWideWeb, Helvetica, Arial, sans-serif;
   font-size: 20px;
@@ -47,8 +48,8 @@ body.collection .shopify-section.section .page-width {
 .sorting-wrapper {
   display: flex;
   /* width: 100%; */
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
   /* gap: 30px; */
   /* margin-bottom: 5px; */
 }
@@ -394,7 +395,8 @@ body.collection .shopify-section.section .page-width {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  /* width: 100%; */
+  gap: 16px;
 }
 .collection-header-menu ul {
   list-style: none;
