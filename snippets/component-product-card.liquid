@@ -44,9 +44,9 @@
     <a
       href="{{ card_product.url }}"
       class="card-media"
-      style="--media-ratio: {{ 1 | divided_by: ratio | times: 100 }}%;"
+      style="--media-ratio: 100%;"
     >
-      <div class="card-media-child{% if card_product.featured_image == blank %} card-media-no-image{% endif %}">
+      <div class="product-card__image-wrapper card-media-child{% if card_product.featured_image == blank %} card-media-no-image{% endif %}">
         {% if card_product.featured_image != blank %}
           {{
             card_product.featured_image
@@ -87,7 +87,22 @@
       {% if show_vendor %}
         <span class="card-vendor">{{ card_product.vendor }}</span>
       {% endif %}
-      <div class="card-pricing">
+
+      <div class="product__card_stars-button-container">
+        <div class="product-card__reviews product-card__reviews--{{ review_content_alignment }}">
+          <span class="visually-hidden">Rating:</span>
+          <span class="product-card__stars">{% render 'component-product-reviews-stars', rate: 4.3, stars_color: "black", stars_size: "15px" %}</span>
+          {% comment %} <a href="#reviews" class="product-card__review-link">
+          </a> {% endcomment %}
+          <span class="product-card__review-count">10 Reviews</span>
+        </div>
+
+        <button type="button" class="product__card-button desktop-hidden">
+          <div class="product__card-button--text">shop now</div>
+          <div class="product__card-button--price">{{ card_product.price | money_without_trailing_zeros }}</div>
+        </button>
+        
+        {% comment %} <div class="card-pricing">
         {% render 'component-product-price', product: card_product, show_compare_at_price: true %}
       </div>
       {% if enable_swatches %}
@@ -233,7 +248,8 @@
             </ajax-cart-product-form>
           {%- endif -%}
         </div>
-      {% endif %}
+      {% endif %} {% endcomment %}
+    </div>
     </div>
   </div>
 </product-card>
