@@ -22,9 +22,14 @@
 }
 
 .drawer__wrapper{
-  width: 35%;
+  width: 450px;
 }
 
+@media (max-width: 1024px){
+  .drawer__wrapper{
+    width: 335px;
+  }
+}
 /*
 .drawer__wrapper .cart-header{
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
