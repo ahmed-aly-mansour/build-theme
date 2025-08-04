@@ -223,7 +223,7 @@
       "type": "hero-banner",
       "name": "Hero Banner",
       "settings": {
-        "hero_banner_size": "large",
+        "hero_banner_size": "small",
         "background_type": "image",
         "image_background": "shopify://shop_images/Group_1123_2_x780_8e70d3c6-7816-4c4a-8eef-a5bf9b729916.webp",
         "image_background_mobile": "shopify://shop_images/Desktop_1600x_1fb8bc9c-0855-4414-9c6e-0e3377e82202.webp",
