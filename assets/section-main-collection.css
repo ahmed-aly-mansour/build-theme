@@ -480,3 +480,81 @@ body.collection .shopify-section.section .page-width {
   color: #BFBFBF;
   font-size: unset;
 }
+
+/* Breakout Styles */
+.breakout-card{
+  margin-bottom: 42px;
+  height: unset;
+}
+@media (max-width: 1024px) {
+  .breakout-card{
+    margin-bottom: 24px;
+  }
+}
+  
+.breakout-card .breakout-card-text-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 20px;
+  padding-bottom: 0px;
+  object-fit: contain;
+  background-size: cover !important;
+}
+
+@media (min-width: 1400px) {
+  .breakout-card .breakout-card-text-container {
+    padding: 20px 30px;
+    padding-bottom: 0px; 
+  }
+}
+
+
+.breakout-card .breakout-card-button {
+  border: 1px solid #000;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  white-space: nowrap;
+  /* height: 40px; */
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: black;
+  transition: background-color 0.5s ease;
+
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
+  font-size: 14px;
+  line-height: 25px;
+  border-radius: 4px;
+  padding: 10px 28px;
+  letter-spacing: .0367em;
+}
+
+.breakout-card .breakout-card-button:hover {
+    background-color: white;
+    /* opacity: 0.8; */
+    color: black;
+}
+
+.breakout-card .breakout-card-description{
+  font-family: RingsideWideWeb, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 150%;
+  letter-spacing: .03em;
+}
+.breakout-card .breakout-card-title{
+  font-family: ArticulatCF, Arial, sans-serif;
+  line-height: 100%;
+  letter-spacing: .03em;
+  text-transform: initial;
+  -webkit-text-stroke-width: thin;
+}
