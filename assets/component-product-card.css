@@ -244,12 +244,31 @@
   transform: scale(1.03);
 }
 
+.product-card__badge{
+  color: #f50a99;
+  text-transform: uppercase;
+  font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .product-card__badge {
+      font-size: 16px;
+      line-height: 1;
+  }
+}
+
 .card-badge-wrapper {
   display: flex;
   width: 100%;
-  padding: 12px 10px;
+  padding: 26px 27px;
 }
-
+@media (max-width: 768px) {
+  .card-badge-wrapper {
+    padding: 15px 16px;
+  }
+}
 .card__badge {
   z-index: 1;
 }
