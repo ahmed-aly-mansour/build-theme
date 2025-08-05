@@ -557,4 +557,9 @@ body.collection .shopify-section.section .page-width {
   letter-spacing: .03em;
   text-transform: initial;
   -webkit-text-stroke-width: thin;
+  margin-bottom: 0;
+}
+
+.breakout-card-title, .breakout-card-description{
+  width: 50%;
 }
