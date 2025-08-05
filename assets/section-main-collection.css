@@ -421,7 +421,7 @@ body.collection .shopify-section.section .page-width {
   /* width: 100%; */
   gap: 16px;
 }
-.collection-header-menu ul {
+.collection-header-menu ul, .collection-header-menu .swiper-wrapper{
   list-style: none;
   display: flex;
   align-items: center;
@@ -441,18 +441,19 @@ body.collection .shopify-section.section .page-width {
 }
 
 @media (min-width: 1024px){
-  .collection-header-menu ul {
+  .collection-header-menu ul,.collection-header-menu .swiper-wrapper {
    gap: 92px; 
   }
 }
-.collection-header-menu ul li {
+.collection-header-menu .swiper-wrapper .swiper-div {
   border-bottom: 1px solid transparent;
+  width: fit-content;
 }
-.collection-header-menu ul li:hover {
+.collection-header-menu .swiper-wrapper .swiper-div:hover {
   border-bottom: 1px solid #f50a99;
 }
 
-.collection-header-menu ul li a {
+.collection-header-menu .swiper-wrapper .swiper-div a {
   text-decoration: none;
   font-family: BaseMonoWideWeb, Courier, Courier New, sans-serif;
   font-size: 18px;
@@ -462,6 +463,20 @@ body.collection .shopify-section.section .page-width {
   color: black;
 }
 
+.collection-header-menu .swiper-slide{
+  width: fit-content;
+}
+
 .is-active{
   border-bottom: 1px solid #f50a99 !important;
+}
+
+.swiper-button-next {
+  top: 70%;
+}
+
+.swiper-button-next:after{
+  position: absolute;
+  color: #BFBFBF;
+  font-size: unset;
 }

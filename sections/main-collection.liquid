@@ -1,3 +1,9 @@
+{{ 'swiper7.4.1.min.css' | asset_url | stylesheet_tag }}
+<script src="{{ "swiper7.4.1.min.js" | asset_url }}" defer="defer" id="swiper-script"></script>
+<script src="{{ 'main-collection-slider.js' | asset_url }}" defer="defer"></script>
+
+
+
 {% comment %} DYNAMIC STYLES {% endcomment %}
 {%- style -%}
   .collection-filters-wrapper {
@@ -385,23 +391,39 @@
                   </div>
                 </div>
 
-                <div class="collection-header-menu">
-                  <ul>
+              <main-collection-menu data-section-id="{{ section.id }}" class="main-collection-menu-section" style="position: relative;">
+                <!-- Slider main container -->
+                <div class="collection-header-menu swiper" id="main-collection-menu-{{ section.id }}">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
                     {% for block in section.blocks %}
                       {% if block.settings.collection %}
-                        <li 
-                          {% if request.path contains block.settings.collection.handle %}
-                            class="is-active"
-                          {% endif %}
-                        >
-                          <a href="{{ block.settings.collection.url }}">
-                            {{ block.settings.collection.title }}
-                          </a>
-                        </li>          
-                      {% endif %}
-                    {% endfor %}
-                  </ul>
+                        <div class="swiper-slide">
+                          <div class="swiper-div {% if request.path contains block.settings.collection.handle %}is-active{% endif %}"
+                          >
+                            <a href="{{ block.settings.collection.url }}">
+                              {{ block.settings.collection.title }}
+                            </a>          
+                          </div>
+                        </div>
+                        {% endif %}
+                      {% endfor %}
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="swiper-pagination"></div>
+
+                  <!-- If we need navigation buttons -->
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next">
+                    {% comment %} <button>></button> {% endcomment %}
+                  </div>
+
+                  <!-- If we need scrollbar -->
+                  <div class="swiper-scrollbar"></div>
                 </div>
+              </main-collection-menu>
+
 
                 <div id="active-filter-group-{{ section.id }}" class="active-filter-group__item-wrapper">
                   {% liquid
