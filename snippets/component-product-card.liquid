@@ -48,6 +48,10 @@
     >
       <div class="product-card__image-wrapper card-media-child{% if card_product.featured_image == blank %} card-media-no-image{% endif %}">
         {% if card_product.featured_image != blank %}
+          {% assign first_image_class = "" %}
+          {% if card_product.images.size > 1 %}
+            {% assign first_image_class = "product-first-image" %}
+          {% endif %}
           {{
             card_product.featured_image
             | image_url: width: card_product.featured_image.width
@@ -55,9 +59,27 @@
               width: card_product.featured_image.width,
               height: card_product.featured_image.height,
               alt: card_product.featured_media.alt,
-              data-product-image: card_product.id
+              data-product-image: card_product.id,
+              class: first_image_class
             | escape
           }}
+
+          {% if card_product.images.size > 1 %}
+            {% for image in card_product.images limit:1 offset:1 %}
+              {% assign second_image = image %}
+              {{
+                second_image
+                | image_url: width: second_image.width
+                | image_tag:
+                  width: second_image.width,
+                  height: second_image.height,
+                  alt: second_image.alt,
+                  data-product-image: card_product.id,
+                  class: "product-second-image"
+                | escape
+              }}
+            {% endfor %}
+          {% endif %}
         {% else %}
           {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {% endif %}
