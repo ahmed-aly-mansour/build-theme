@@ -485,6 +485,7 @@ body.collection .shopify-section.section .page-width {
 .breakout-card{
   margin-bottom: 42px;
   height: unset;
+  cursor: pointer;
 }
 @media (max-width: 1024px) {
   .breakout-card{
