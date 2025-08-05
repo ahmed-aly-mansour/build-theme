@@ -498,6 +498,7 @@
                           {% for breakout_card in has_breakout_cards %}
                               {% if breakout_card.number_of_skipped_products.value == products_count %}
                               <div class="breakout-card product-card">
+                                <a href="{{breakout_card.button_link }}" style="text-decoration: none;color: unset;">
                                 <div class="breakout-card-text-container"
                                   {% if breakout_card.image != blank%}
                                     style="background: url({{ breakout_card.image | image_url }});"
@@ -509,6 +510,7 @@
                                   <p class="breakout-card-description">{{ breakout_card.description }}</p>
                                   <a href="{{ breakout_card.button_link }}" class="breakout-card-button">{{ breakout_card.button_label }}</a>
                                 </div>
+                              </a>
                               </div>
                             {% endif %}
                           {% endfor %}

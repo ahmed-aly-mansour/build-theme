@@ -559,8 +559,30 @@ body.collection .shopify-section.section .page-width {
   text-transform: initial;
   -webkit-text-stroke-width: thin;
   margin-bottom: 0;
+  font-size: 30px;
 }
 
+@media (max-width: 767px) {
+  .breakout-card .breakout-card-title{
+    font-size: 20px;
+  }
+  .breakout-card .breakout-card-description{
+    font-size: 9px;
+  }
+  .breakout-card .breakout-card-button {
+    font-size: 13px;
+    padding: 4px 12px;
+  }
+}
 .breakout-card-title, .breakout-card-description{
   width: 50%;
+}
+
+@media (max-width: 500px) {
+  .breakout-card .breakout-card-title{
+    font-size: 16px;
+  }
+  .breakout-card-title, .breakout-card-description {
+    width: 70%;
+  }
 }
