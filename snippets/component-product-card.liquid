@@ -63,6 +63,13 @@
         {% endif %}
       </div>
       <div class="card-badge-wrapper {{ settings.badge_position }}">
+
+        {% if card_product.metafields.custom.quality_badge_image %}
+          <div  class="product__card-award"
+                style="background-image: url('{{ card_product.metafields.custom.quality_badge_image | image_url }}')">
+          </div>
+        {% endif %}
+
         <div class="card__badge {{ settings.badge_position }}">
           {% for tag in card_product.tags %}
             {% assign flag_word = tag | slice: 0, 5 %}

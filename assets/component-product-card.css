@@ -284,6 +284,19 @@
 .card__badge.bottom {
   align-self: flex-start;
 }
+
+.product__card-award {
+  background-size: cover;
+  border-radius: 100%;
+    position: absolute;
+    overflow: hidden;
+    z-index: 4;
+    height: 80px;
+    width: 80px;
+    top: 24px;
+    left: 24px;
+  }
+  
 @media (max-width: 768px) {
   /* .product-card.card--standard .card-media-child {
     width: 100%;
