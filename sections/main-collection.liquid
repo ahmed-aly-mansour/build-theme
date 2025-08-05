@@ -332,7 +332,7 @@
                         <h1 class="collection-hero__title">{{ collection.title }}</h1>
                       </div>
                     </div>
-                     <span>|</span>
+                     <span class="small-hide">|</span>
                     <div class="item-counts-wrapper">
                       <div id="results-count-{{ section.id }}" class="results-count">
                         {%- if collection.products_count == collection.all_products_count -%}
@@ -350,7 +350,7 @@
                   <div class="child-sorting-wrapper">
                     {%- if section.settings.enable_sorting -%}
                       {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
-                      <div id="sort-by-{{ section.id }}" class="facet-filters__field small-hide">
+                      <div id="sort-by-{{ section.id }}" class="facet-filters__field">
                         <h2 class="facet-filters__label">
                           <label for="SortBy">Sort by:</label>
                         </h2>
@@ -376,6 +376,9 @@
                             </option>
                           {%- endfor -%}
                         </select>
+                        <span class="sort-by-icon">
+                          {{ 'icon-chevron-down.svg' | inline_asset_content }}
+                        </span>
                       </div>
                     {%- endif -%}
                     
