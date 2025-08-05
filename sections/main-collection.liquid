@@ -487,20 +487,33 @@
                     {%- if collection.products.size == 0 -%}
                       <p>Nothing Here</p>
                     {%- else -%}
-                      <div class="breakout-card product-card">
-                        <div class="breakout-card-text-container"
-                          {% if collection.metafields.custom.breakout_card.value.image != blank%}
-                            style="background: url({{ collection.metafields.custom.breakout_card.value.image | image_url }});"
-                          {% else %}
-                            style="background: #ebdadb;"
-                          {% endif %}
-                        >
-                          <h2 class="breakout-card-title">{{ collection.metafields.custom.breakout_card.value.title }}</h2>
-                          <p class="breakout-card-description">{{ collection.metafields.custom.breakout_card.value.description }}</p>
-                          <a href="{{ collection.metafields.custom.breakout_card.value.button_link }}" class="breakout-card-button">{{ collection.metafields.custom.breakout_card.value.button_label }}</a>
-                        </div>
-                      </div>
+                      
+
+                      {% assign has_breakout_cards = collection.metafields.custom.breakout_card.value %}
+                      {% assign products_count = 0 %}
+
                       {%- for product in collection.products -%}
+                        
+                        {% if has_breakout_cards %}
+                          {% for breakout_card in has_breakout_cards %}
+                              {% if breakout_card.number_of_skipped_products.value == products_count %}
+                              <div class="breakout-card product-card">
+                                <div class="breakout-card-text-container"
+                                  {% if breakout_card.image != blank%}
+                                    style="background: url({{ breakout_card.image | image_url }});"
+                                  {% else %}
+                                    style="background: #ebdadb;"
+                                  {% endif %}
+                                >
+                                  <h2 class="breakout-card-title">{{ breakout_card.title }}</h2>
+                                  <p class="breakout-card-description">{{ breakout_card.description }}</p>
+                                  <a href="{{ breakout_card.button_link }}" class="breakout-card-button">{{ breakout_card.button_label }}</a>
+                                </div>
+                              </div>
+                            {% endif %}
+                          {% endfor %}
+                        {% endif %}
+
                         {% render 'component-product-card',
                           card_product: product,
                           show_vendor: section.settings.show_vendor,
@@ -511,6 +524,7 @@
                           quick_add: section.settings.quick_add
                           section_id: section.id
                         %}
+                        {% assign products_count = products_count | plus: 1 %}
                       {%- endfor -%}
                     {%- endif -%}
                   </div>
