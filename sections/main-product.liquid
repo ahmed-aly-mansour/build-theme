@@ -81,14 +81,15 @@
 
   {% assign selected_variant = product.selected_or_first_available_variant %}
 
-  <div class="page-width">
+  <div class="">
     <div class="product flex product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} {% if section.settings.constrain_to_viewport %}constrain-height{% endif %}">
       <div class="product__media-wrapper flex__item media-{{ section.settings.media_fit }}">
         {% render 'component-product-media-gallery',
           product_media: product.media,
           selected_variant: selected_variant,
           video_looping: section.settings.enable_video_looping,
-          is_zoom: section.settings.image_zoom
+          is_zoom: section.settings.image_zoom,
+          thumbnails_position: section.settings.desktop_thumbnails_position
         %}
       </div>
       <div class="product__info-wrapper flex__item {% if section.settings.enable_sticky_info %}product__info-sticky {% endif %}">
@@ -2262,6 +2263,23 @@
       ],
       "default": "left",
       "label": "t:sections.main-product.settings.media_position.label",
+      "info": "t:sections.main-product.settings.media_position.info"
+    },
+    {
+      "type": "select",
+      "id": "desktop_thumbnails_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "bottom",
+          "label": "bottom"
+        }
+      ],
+      "default": "bottom",
+      "label": "Desktop Gallery Position",
       "info": "t:sections.main-product.settings.media_position.info"
     },
     {
