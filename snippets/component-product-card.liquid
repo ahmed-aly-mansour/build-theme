@@ -46,12 +46,17 @@
       class="card-media"
       style="--media-ratio: 100%; text-decoration:none;"
     >
-      <div class="product-card__image-wrapper card-media-child{% if card_product.featured_image == blank %} card-media-no-image{% endif %}">
+      <product-card-image data-section-id="{{ section.id }}" class="product-card-image-section" style="position: relative; width: 100%; height: 100%">
+
+      <div class="product-card__image-wrapper card-media-child{% if card_product.featured_image == blank %} card-media-no-image{% endif %} swiper" id="product-card-image-{{ section.id }}">
+        <div class="swiper-wrapper">
         {% if card_product.featured_image != blank %}
           {% assign first_image_class = "" %}
+
           {% if card_product.images.size > 1 %}
             {% assign first_image_class = "product-first-image" %}
           {% endif %}
+          <div class="swiper-slide {{ first_image_class }}">
           {{
             card_product.featured_image
             | image_url: width: card_product.featured_image.width
@@ -63,10 +68,12 @@
               class: first_image_class
             | escape
           }}
+        </div>
 
           {% if card_product.images.size > 1 %}
             {% for image in card_product.images limit:1 offset:1 %}
               {% assign second_image = image %}
+              <div class="swiper-slide product-second-image">
               {{
                 second_image
                 | image_url: width: second_image.width
@@ -78,11 +85,24 @@
                   class: "product-second-image"
                 | escape
               }}
+            </div>
             {% endfor %}
           {% endif %}
         {% else %}
           {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
         {% endif %}
+       </div>
+
+       <!-- If we need pagination -->
+       <div class="swiper-pagination"></div>
+
+       <!-- If we need navigation buttons -->
+       <div class="swiper-button-prev"></div>
+       <div class="swiper-button-next"></div>
+
+       <!-- If we need scrollbar -->
+       <div class="swiper-scrollbar"></div>
+
       </div>
       <div class="card-badge-wrapper {{ settings.badge_position }}">
 
@@ -117,6 +137,7 @@
           {%- endif -%} {% endcomment %}
         </div>
       </div>
+      </product-card-image>
     </a>
     <div class="card-information">
       <h2 class="card-heading">

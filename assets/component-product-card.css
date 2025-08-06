@@ -298,6 +298,15 @@
     left: 24px;
   }
 
+  @media (max-width: 1024px) {
+    .product__card-award {
+        height: 40px;
+        width: 40px;
+        top: 16px;
+        left: 16px;
+    }
+}
+
 @media (max-width: 768px) {
   /* .product-card.card--standard .card-media-child {
     width: 100%;
@@ -435,4 +444,9 @@
 
 .product-card:hover .product-first-image{
   opacity: 0;
+}
+
+
+.product-card-image-section .swiper-pagination-bullet-active{
+  background: #000;
 }

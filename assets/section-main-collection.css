@@ -491,10 +491,6 @@ body.collection .shopify-section.section .page-width {
   font-size: unset;
 }
 
-.swiper-slide:last-child {
-  margin-right: 0;
-}
-
 /* Breakout Styles */
 .breakout-card{
   margin-bottom: 42px;
