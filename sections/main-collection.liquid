@@ -342,7 +342,7 @@
                     <div class="item-counts-wrapper">
                       <div id="results-count-{{ section.id }}" class="results-count">
                         {%- if collection.products_count == collection.all_products_count -%}
-                          {{ collection.products_count }} products
+                          {{ collection.products_count }} ITEMS
                         {% else %}
                           {{ collection.products_count }} of {{ collection.all_products_count }}
                         {% endif %}
@@ -393,17 +393,29 @@
                           <!-- Trigger -->
                           <div class="custom-sort-trigger" @click="open = !open">
                             {% assign active_option = collection.sort_options | where: "value", sort_by | first %}
-                            {{ active_option.name }}
+                            {% case active_option.value %}
+                              {% when 'price-ascending' %}
+                                Lowest Price
+                              {% when 'price-descending' %}
+                                Highest Price
+                              {% when 'best-selling' %}
+                                Best Sellers
+                              {% when 'manual' %}
+                                Featured
+                              {% when 'created-descending' %}
+                                Date, New to Old
+                              {% else %}
+                            {% endcase %}
+                            
                           </div>
                         
                           <!-- Dropdown -->
                           <ul class="custom-sort-dropdown" x-show="open" x-transition :class="{ 'open': open }">
-                            {% unless sort_by == 'manual' %}
                               {% assign selected_option = '' %}
 
                                 {% for option in collection.sort_options %}
                                   {% if option.value == sort_by %}
-                                    {% assign selected_option = option.name %}
+                                    {% assign selected_option = option.value %}
                                   {% endif %}
                                 {% endfor %}
 
@@ -415,22 +427,81 @@
                                   open = false;
                                 "
                               >
-                                {{ selected_option }}
+                                {% case selected_option %}
+                                  {% when 'price-ascending' %}
+                                    Lowest Price
+                                  {% when 'price-descending' %}
+                                    Highest Price
+                                  {% when 'best-selling' %}
+                                    Best Sellers
+                                  {% when 'manual' %}
+                                    Featured
+                                  {% when 'created-descending' %}
+                                    Date, New to Old
+                                  {% else %}
+                                {% endcase %}
                               </li>
-                            {% endunless %}
 
                             {%- for option in collection.sort_options -%}
                               {% unless option.value == sort_by %}
-                                <li
-                                  class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
-                                  @click.prevent="
-                                    $refs.sortInput.value = '{{ option.value }}';
-                                    document.getElementById('filters-form').submit();
-                                    open = false;
-                                  "
-                                >
-                                  {{ option.name }}
-                                </li>
+                                {% case option.value %}
+                                  {% when 'price-ascending' %}
+                                    <li
+                                      class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
+                                      @click.prevent="
+                                        $refs.sortInput.value = '{{ option.value }}';
+                                        document.getElementById('filters-form').submit();
+                                        open = false;
+                                      "
+                                    >
+                                      Lowest Price
+                                    </li>
+                                  {% when 'price-descending' %}
+                                    <li
+                                      class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
+                                      @click.prevent="
+                                        $refs.sortInput.value = '{{ option.value }}';
+                                        document.getElementById('filters-form').submit();
+                                        open = false;
+                                      "
+                                    >
+                                      Highest Price
+                                    </li>
+                                  {% when 'best-selling' %}
+                                    <li
+                                      class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
+                                      @click.prevent="
+                                        $refs.sortInput.value = '{{ option.value }}';
+                                        document.getElementById('filters-form').submit();
+                                        open = false;
+                                      "
+                                    >
+                                      Best Sellers
+                                    </li>
+                                  {% when 'manual' %}
+                                    <li
+                                      class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
+                                      @click.prevent="
+                                        $refs.sortInput.value = '{{ option.value }}';
+                                        document.getElementById('filters-form').submit();
+                                        open = false;
+                                      "
+                                    >
+                                      Featured
+                                    </li>
+                                  {% when 'created-descending' %}
+                                    <li
+                                      class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
+                                      @click.prevent="
+                                        $refs.sortInput.value = '{{ option.value }}';
+                                        document.getElementById('filters-form').submit();
+                                        open = false;
+                                      "
+                                    >
+                                      Date, New to Old
+                                    </li>
+                                  {% else %}
+                                {% endcase %}
                               {% endunless %}
                             {%- endfor -%}
                           </ul>

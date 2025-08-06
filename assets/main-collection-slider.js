@@ -33,6 +33,7 @@ class MainCollectionMenu extends HTMLElement {
         slidesPerView: 3,
         autoHeight: false,
         centeredSlides: false,
+        spaceBetween: 40,
         loop: false,
         watchOverflow: true,
         navigation: {
@@ -42,14 +43,21 @@ class MainCollectionMenu extends HTMLElement {
         breakpoints: {
           400: {
             slidesPerView: 4,
+            spaceBetween: 40,
           },
 
           500: {
             slidesPerView: 5,
+            spaceBetween: 40,
           },
 
           900: {
             slidesPerView: 10,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 10,
+            spaceBetween: 92,
           },
         }
       });
