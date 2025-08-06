@@ -286,6 +286,7 @@ body.collection .shopify-section.section .page-width {
   animation: spin 0.6s infinite linear;
   display: none;
   position: absolute;
+  right: -50px;
 }
 
 .product-grid-wrapper{

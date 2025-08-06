@@ -387,7 +387,7 @@
                         <div x-data="{ open: false }" class="custom-sort-wrapper" @click.outside="open = false">
                           <!-- Hidden form -->
                           <form id="filters-form" method="GET">
-                            <input type="hidden" name="sort_by" x-ref="sortInput" value="{{ sort_by }}">
+                            <input type="hidden" name="sort_by" x-ref="sortInput" value="{{ sort_by }}" data-render-section="filters-form">
                           </form>
                         
                           <!-- Trigger -->
@@ -410,7 +410,11 @@
                           </div>
                         
                           <!-- Dropdown -->
-                          <ul class="custom-sort-dropdown" x-show="open" x-transition :class="{ 'open': open }">
+                          <ul 
+                            class="custom-sort-dropdown" 
+                            id="SortBy"
+                            data-render-section="filters-form"
+                            x-show="open" x-transition :class="{ 'open': open }">
                               {% assign selected_option = '' %}
 
                                 {% for option in collection.sort_options %}
@@ -420,12 +424,13 @@
                                 {% endfor %}
 
                               <li
+                                selected="selected"
                                 class="custom-sort__option active"
                                 @click.prevent="
                                   $refs.sortInput.value = '{{ sort_by }}';
-                                  document.getElementById('filters-form').submit();
                                   open = false;
                                 "
+                                value="{{ selected_option | escape }}"
                               >
                                 {% case selected_option %}
                                   {% when 'price-ascending' %}
@@ -450,7 +455,6 @@
                                       class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
                                       @click.prevent="
                                         $refs.sortInput.value = '{{ option.value }}';
-                                        document.getElementById('filters-form').submit();
                                         open = false;
                                       "
                                     >
@@ -461,7 +465,6 @@
                                       class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
                                       @click.prevent="
                                         $refs.sortInput.value = '{{ option.value }}';
-                                        document.getElementById('filters-form').submit();
                                         open = false;
                                       "
                                     >
@@ -472,7 +475,6 @@
                                       class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
                                       @click.prevent="
                                         $refs.sortInput.value = '{{ option.value }}';
-                                        document.getElementById('filters-form').submit();
                                         open = false;
                                       "
                                     >
@@ -483,7 +485,6 @@
                                       class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
                                       @click.prevent="
                                         $refs.sortInput.value = '{{ option.value }}';
-                                        document.getElementById('filters-form').submit();
                                         open = false;
                                       "
                                     >
@@ -494,7 +495,6 @@
                                       class="custom-sort__option{% if option.value == sort_by %} active{% endif %}"
                                       @click.prevent="
                                         $refs.sortInput.value = '{{ option.value }}';
-                                        document.getElementById('filters-form').submit();
                                         open = false;
                                       "
                                     >
@@ -674,7 +674,7 @@
   </div>
 </div>
 
-<script>
+{% comment %} <script>
   document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.custom-sort__option').forEach(function (item) {
       item.addEventListener('click', function () {
@@ -698,7 +698,7 @@
       });
     });
   });
-</script>
+</script> {% endcomment %}
 
 
 <script src="{{ 'component-collection-info.js' | asset_url }}" defer="defer"></script>
