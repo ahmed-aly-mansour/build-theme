@@ -30,9 +30,14 @@ class MainCollectionMenu extends HTMLElement {
       if (!swiperEl || swiperEl.classList.contains('swiper-initialized')) return;
 
       this.swiper = new Swiper(selector, {
-        slidesPerView: 3,
+        slidesPerView: 'auto',
         autoHeight: false,
         centeredSlides: false,
+        draggable: true,
+        simulateTouch: true,
+        touchRatio: 1,
+        grabCursor: true,
+        allowTouchMove: true,
         spaceBetween: 40,
         loop: false,
         watchOverflow: true,
@@ -42,22 +47,26 @@ class MainCollectionMenu extends HTMLElement {
         },
         breakpoints: {
           400: {
-            slidesPerView: 4,
+            // slidesPerView: 4,
             spaceBetween: 40,
           },
 
           500: {
-            slidesPerView: 5,
+            // slidesPerView: 5,
             spaceBetween: 40,
           },
 
           900: {
-            slidesPerView: 10,
+            // slidesPerView: 10,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 10,
+            // slidesPerView: 10,
             spaceBetween: 92,
+            navigation: {
+              nextEl: null,
+              prevEl: null, // no prev button
+            }
           },
         }
       });
