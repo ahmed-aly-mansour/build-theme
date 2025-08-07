@@ -16,11 +16,11 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
-    .option__label {
+    /* .option__label {
       color: {{ section.settings.variant_label_color }};
       font-size: {{ section.settings.variant_label_font_size }}px;
       font-weight: {{ section.settings.variant_label_font_weight }};
-    }
+    } */
 
     {% for block in section.blocks %}
       {% case block.type %}
@@ -117,17 +117,13 @@
                   {%- assign filled_stars = block.settings.filled_stars | default: 4 -%}
                   {%- assign total_stars = block.settings.total_stars | default: 5 -%}
                   {%- assign empty_stars = total_stars | minus: filled_stars -%}
-                  
+                  {% assign r = filled_stars | times: 5.0 | divided_by: total_stars %} 
+
                   <span style="color: {{ block.settings.star_color | default: '#000' }}; font-size: {{ block.settings.star_size | default: 22 }}px;">
-                    {%- for i in (1..filled_stars) -%}
-                      &#9733;
-                    {%- endfor -%}
-                    {%- for i in (1..empty_stars) -%}
-                      &#9734;
-                    {%- endfor -%}
+                    {% render 'component-product-reviews-stars', rate: r, stars_color: block.settings.star_color | default: '#000', stars_size: block.settings.star_size | default: 22 | append: "px;" %}
                   </span>
-                  <span class="review-count" style="color: {{ block.settings.review_text_color | default: '#888' }}; font-size: {{ block.settings.review_text_size | default: 16 }}px; margin-left: 8px;">
-                    {{ block.settings.review_count | default: '124' }} {{ block.settings.review_text | default: 'Reviews' }}
+                  <span class="review-count">
+                    ({{ block.settings.review_count | default: '124' }} {{ block.settings.review_text | default: 'Reviews' }})
                   </span>
                 </div>
               </div>
@@ -235,7 +231,31 @@
                           {%- assign downcased_option_name = option.name | downcase -%}
                           {%- unless has_bulk_selector and downcased_option_name contains 'size' -%}
                             <fieldset class="product-form__input">
-                              <legend class="option__label">{{ option.name }}</legend>
+                              
+                              <div class="product-form__tabs">
+                             <legend class="option__label">
+                               ALL
+                             </legend>
+                           
+                             {%- assign shown_variant_types = '' -%}
+                             {%- for variant in product.variants -%}
+                               {%- assign current_type = variant.metafields.custom.variant_type | default: '' -%}
+                               {%- assign padded_type = '|' | append: current_type | append: '|' -%}
+                           
+                               {%- unless shown_variant_types contains padded_type -%}
+                                 <legend class="option__label">
+                                   {{ current_type }}
+                                 </legend>
+                           
+                                 {%- assign shown_variant_types = shown_variant_types | append: padded_type -%}
+                               {%- endunless -%}
+                             {%- endfor -%}
+                           </div>
+                           
+
+                            <div class="variant-options-container">
+
+
                               {%- for value in option.values -%}
                                 <input
                                   type="radio"
@@ -249,14 +269,31 @@
                                   {% endif %}
                                   data-product-url="{{ value.product_url }}"
                                   data-option-value-id="{{ value.id }}"
+                                  data-variant-type="{{ value.variant.metafields.custom.variant_type }}"
+                                  data-variant-title="{{ value.variant.title | escape }}"
+                                  data-variant-description="{{ value.variant.metafields.custom.variant_description | escape }}"
                                 >
-                                <label
-                                  class="pill-label {% unless value.available %}pill-disabled{% endunless %}"
-                                  for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}"
+                                  <label
+                                    class="pill-label {% unless value.available %}pill-disabled{% endunless %}"
+                                    for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}"
+                                    data-product-url="{{ value.product_url }}"
+                                    data-variant-type="{{ value.variant.metafields.custom.variant_type }}"
                                 >
-                                  {{ value }}
+                                  {% if value.variant.metafields.custom.swatch_color != blank %}
+                                    <span 
+                                      class="color-swatch-icon"
+                                      style="border-radius: 100%; display: inline-block; width: 24px; height: 24px; background-color: {{ value.variant.metafields.custom.swatch_color }};"
+                                    >
+                                    </span>
+                                  {% endif %}
                                 </label>
                               {%- endfor -%}
+                            </div>
+
+                            <div class="variant-description-container">
+                              <span class="name">{{ option.values[0].variant.title }}</span>
+                              <span class="description">{{ option.values[0].variant.metafields.custom.variant_description }}</span>
+                            </div>
                             </fieldset>
                           {%- endunless -%}
                         {%- endfor -%}

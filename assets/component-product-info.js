@@ -15,6 +15,9 @@ if (!customElements.get('product-info')) {
       }
       document.getElementById('swiper-script').addEventListener('load', this.initSwiper.bind(this));
       document.addEventListener('liquid-ajax-cart:request-end', this.onCartUpdate.bind(this));
+      this.initColorSwatchTabs();
+      
+      
     }
 
     connectedCallback() {
@@ -263,6 +266,12 @@ if (!customElements.get('product-info')) {
             this.updateSourceFromDestination(html, `sku-${this.dataset.section}`);
             this.updateSourceFromDestination(html, `inventory-${this.dataset.section}`);
             
+            // Re-initialize color swatch tabs after section update
+            this.initColorSwatchTabs();
+            
+            // Update variant description
+            this.updateVariantDescription(variant?.title ,variant?.metafields);
+            
             // Update bulk quantity total after section update
             this.updateBulkQuantityTotal();
           }
@@ -275,7 +284,84 @@ if (!customElements.get('product-info')) {
           }
         });
     }
-  }
 
+    initColorSwatchTabs() {
+      const tabsContainer = this.querySelector('.product-form__tabs');
+      if (!tabsContainer) return;
+
+      if (!this.activeType) this.activeType = 'ALL';
+      const legends = tabsContainer.querySelectorAll('legend.option__label');
+      
+      legends.forEach(legend => {
+        legend.addEventListener('click', () => {
+          const type = legend.textContent.trim();
+          this.activeType = type;
+          this.selectFirstVariant(type);
+          this.updateActiveTab(type);
+        });
+      });
+
+      this.updateActiveTab(this.activeType);
+    }
+
+    selectFirstVariant(type) {
+      let input;
+      console.log(type)
+      if (type === 'ALL') {
+        input = this.querySelector('input.pill-radio');
+      } else {
+        input = this.querySelector(`input.pill-radio[data-variant-type='${type}']`);
+      }
+      
+      if (input) {
+        input.click();
+      }
+    }
+
+    updateActiveTab(activeType) {
+      this.activeType = activeType;
+      const legends = this.querySelectorAll('.product-form__tabs legend.option__label');
+      legends.forEach(legend => {
+        const type = legend.textContent.trim();
+        if (type === activeType) {
+          legend.classList.add('active');
+        } else {
+          legend.classList.remove('active');
+        }
+      });
+
+      this.updateColorSwatches(activeType)
+    }
+
+    updateColorSwatches(activeType){
+      const swatches_labels = this.querySelectorAll('.pill-label');
+      swatches_labels.forEach(swatch => {
+        const input = swatch.previousElementSibling;
+        const type = input?.dataset?.variantType;
+        if (activeType === 'ALL' || type === activeType) {
+          swatch.style.display = "inline-flex";
+        } else {
+          swatch.style.display = "none";
+        }
+      });
+    }
+
+    updateVariantDescription(name, desc) {
+      const selectedInput = this.querySelector('.pill-radio:checked');
+      if (selectedInput) {
+        const title = selectedInput.dataset.variantTitle || '';
+        const description = selectedInput.dataset.variantDescription || '';
+
+        const container = this.querySelector('.variant-description-container');
+        if (container) {
+          const nameEl = container.querySelector('.name');
+          const descEl = container.querySelector('.description');
+          if (nameEl) nameEl.textContent = title;
+          if (descEl) descEl.textContent = description;
+        }
+      }
+
+    }
+  }
   customElements.define('product-info', ProductInfo);
 }
