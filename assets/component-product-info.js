@@ -25,22 +25,23 @@ if (!customElements.get('product-info')) {
     }
 
     initSwiper() {
+      let dir = 'horizontal'
+      if (window.innerWidth > 700){dir = 'vertical'}
+
       const thumbsSwiperEl = this.querySelector('.thumbs-gallery');
       const mainSwiperEl = this.querySelector('.main-gallery');
       
       // Initialize thumbnail swiper if it exists
       if (thumbsSwiperEl) {
         this.thumbsSwiper = new Swiper(thumbsSwiperEl, {
+          direction: dir,
           spaceBetween: 15,
-          slidesPerView: 5,
+          slidesPerView: 6,
           freeMode: false,
           watchSlidesProgress: true,
           slideToClickedSlide: true,
           simulateTouch: true,
-          breakpoints: {
-            600: { slidesPerView: 6 },
-            900: { slidesPerView: 6 }
-          }
+          watchOverflow: false,
         });
       }
 

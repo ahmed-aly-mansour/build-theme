@@ -447,14 +447,18 @@ shopify-buy-it-now-button .shopify-payment-button__button {
     padding-left: 40px;
   }
 
+  .product__info-wrapper{
+    padding-top: 54px;
+  }
+
   .product--right .product__info-wrapper {
     padding-right: 40px;
   }
 
-  .product__info-sticky {
+  /* .product__info-sticky {
     position: sticky;
     top: 137px;
-  }
+  } */
 
   .product__info-wrapper .caption-with-letter-spacing {
     font-size: 10px;
@@ -622,4 +626,25 @@ shopify-buy-it-now-button .shopify-payment-button__button {
   max-width: 275px; 
   justify-content: space-between; 
   display: flex; 
+}
+
+
+/* my own styles */
+
+.product__title h1 {
+  font-family: GeogrotesqueCondBoldWeb, Arial Black, Impact, sans-serif;
+  letter-spacing: 1.18px;
+  line-height: 22px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-size: 18px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 1024px) {
+  .product__title h1 {
+      font-size: 22px;
+      line-height: 29px;
+  }
 }
