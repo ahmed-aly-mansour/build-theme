@@ -291,6 +291,21 @@
                                     data-product-url="{{ value.product_url }}"
                                     data-variant-type="{{ value.variant.metafields.custom.variant_type }}"
                                 >
+                                  {{ settings.swatches }}
+                                  {% assign swatch_lines = settings.swatches | split: newline %}
+                                  {% for line in swatch_lines %}
+                                    {% if line contains '==' %}
+                                      {% assign swatch_data = line | split: '==' %}
+                                      {% if swatch_data[0] == value %}
+                                        <span 
+                                          class="color-swatch-icon"
+                                          style="border-radius: 100%; display: inline-block; width: 24px; height: 24px; background-color: {{ swatch_data[1] }};"
+                                        >
+                                        </span>
+                                      {% endif %}
+                                    {% endif %}
+                                  {% endfor %}
+                                  
                                   {% if value.variant.metafields.custom.swatch_color != blank %}
                                     <span 
                                       class="color-swatch-icon"
@@ -2433,6 +2448,12 @@
         }
       ],
       "default": "300"
+    },
+    {
+      "type": "text",
+      "id": "custom_setting",
+      "label": "Custom Setting",
+      "default": "Default value"
     }
   ]
 }

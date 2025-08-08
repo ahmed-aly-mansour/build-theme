@@ -1458,6 +1458,17 @@
     ]
   },
   {
+    "name": "Swatches",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "swatches",
+        "label": "Swatches",
+        "info": "Type swatches, one line each, in format [name==value]. Valid values are color HEX codes and absolute links for Shopify-hosted images (jpg/png)."
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.cart.name",
     "settings": [
       {
