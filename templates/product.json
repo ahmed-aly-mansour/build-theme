@@ -37,6 +37,8 @@
         "variant_picker_NWh8q7": {
           "type": "variant_picker",
           "settings": {
+            "show_picker_title": false,
+            "show_variant_types": true,
             "picker_type": "button",
             "swatch_shape": "circle"
           }
