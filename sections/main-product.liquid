@@ -232,24 +232,36 @@
                           {%- unless has_bulk_selector and downcased_option_name contains 'size' -%}
                             <fieldset class="product-form__input">
                               
+                              {% assign variant_picker_block = section.blocks | where: 'type', 'variant_picker' | first %}
+                              {% if variant_picker_block.settings.show_picker_title %}
+                                <legend class="option__label" style="margin-bottom: 15px;">
+                                  {{option.name}} :
+                                </legend>
+                              {% endif %}
                               <div class="product-form__tabs">
-                             <legend class="option__label">
-                               ALL
-                             </legend>
-                           
-                             {%- assign shown_variant_types = '' -%}
-                             {%- for variant in product.variants -%}
-                               {%- assign current_type = variant.metafields.custom.variant_type | default: '' -%}
-                               {%- assign padded_type = '|' | append: current_type | append: '|' -%}
-                           
-                               {%- unless shown_variant_types contains padded_type -%}
-                                 <legend class="option__label">
-                                   {{ current_type }}
-                                 </legend>
-                           
-                                 {%- assign shown_variant_types = shown_variant_types | append: padded_type -%}
-                               {%- endunless -%}
-                             {%- endfor -%}
+
+
+                                {% if variant_picker_block.settings.show_variant_types %}
+                                  <legend class="option__label">
+                                    ALL
+                                  </legend>
+                                
+                                  {%- assign shown_variant_types = '' -%}
+                                  {%- for variant in product.variants -%}
+                                    {%- assign current_type = variant.metafields.custom.variant_type | default: '' -%}
+                                    {%- assign padded_type = '|' | append: current_type | append: '|' -%}
+                                
+                                    {%- unless shown_variant_types contains padded_type -%}
+                                      <legend class="option__label">
+                                        {{ current_type }}
+                                      </legend>
+                                
+                                      {%- assign shown_variant_types = shown_variant_types | append: padded_type -%}
+                                    {%- endunless -%}
+                                  {%- endfor -%}
+                                
+                                {% endif %}
+                                
                            </div>
                            
 
@@ -1017,6 +1029,18 @@
       "name": "t:sections.main-product.blocks.variant_picker.name",
       "limit": 1,
       "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_picker_title",
+          "label": "Show Variant Title",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_variant_types",
+          "label": "Show Variant Types",
+          "default": true
+        },
         {
           "type": "select",
           "id": "picker_type",
