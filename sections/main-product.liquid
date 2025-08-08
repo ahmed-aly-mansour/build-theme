@@ -286,7 +286,7 @@
                                   data-variant-description="{{ value.variant.metafields.custom.variant_description | escape }}"
                                 >
                                   <label
-                                    class="pill-label {% unless value.available %}pill-disabled{% endunless %}"
+                                    class="pill-label {% if value.metafields.custom.is_new %}is-new{% endif %} {% unless value.available %}pill-disabled{% endunless %}"
                                     for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}"
                                     data-product-url="{{ value.product_url }}"
                                     data-variant-type="{{ value.variant.metafields.custom.variant_type }}"
